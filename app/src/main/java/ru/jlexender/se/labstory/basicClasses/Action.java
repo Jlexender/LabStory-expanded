@@ -37,4 +37,9 @@ public abstract class Action {
                + ", moodChanging=" + moodChanging
                + '}';
     }
+
+    @Override 
+    public int hashCode() {
+        return this.toString().hashCode();
+    }
 }

@@ -45,6 +45,11 @@ public class Human {
                + "name='" + name + '\'' 
                + ", mood=" + mood
                + '}';
+    } 
+    
+    @Override 
+    public int hashCode() {
+        return this.toString().hashCode();
     }
 
 }

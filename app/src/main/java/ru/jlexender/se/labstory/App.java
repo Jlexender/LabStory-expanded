@@ -16,12 +16,13 @@ public class App {
         Book story = new Book();
         story.go();
 
-        Human human = new Human("Дмитрий Карпов");
-        System.out.println(human);
-
+        Human dvk = new Human("Дмитрий Карпов");
         Place FH = new FilleHome();
 
+        System.out.println(dvk);
         System.out.println(FH);
-
+        System.out.println(dvk.hashCode());
+        System.out.println(FH.hashCode());
+        
     }
 }

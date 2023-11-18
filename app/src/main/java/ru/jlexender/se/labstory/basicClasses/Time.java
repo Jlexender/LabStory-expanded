@@ -20,6 +20,7 @@ public class Time {
     public boolean equals(Object object) {
         return this == object;
     }
+    
     @Override
     public String toString() {
         return "Time{"
@@ -28,5 +29,9 @@ public class Time {
                + '}';
     }
 
+    @Override
+   public int hashCode() {
+       return this.toString().hashCode();
+   } 
 }
 

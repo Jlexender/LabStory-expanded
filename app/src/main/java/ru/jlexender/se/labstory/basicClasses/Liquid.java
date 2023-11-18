@@ -22,4 +22,9 @@ public abstract class Liquid {
                + "name='" + name + '\'' 
                + '}';
     }
+    
+    @Override 
+    public int hashCode() {
+        return this.toString().hashCode();
+    }
 }

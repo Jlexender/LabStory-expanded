@@ -33,8 +33,13 @@ public abstract class Place {
     public String toString() {
         return "Place{"
                + "name='" + name + '\'' 
-               + ", weather=" + weather + '\'' 
+               + ", weather=" + weather 
                + '}';
+    }
+
+    @Override 
+    public int hashCode() {
+        return this.toString().hashCode();
     }
 }
 

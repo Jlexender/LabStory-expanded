@@ -22,4 +22,9 @@ public abstract class Item {
                + "name='" + name + '\'' 
                + '}';
     }
+
+    @Override 
+    public int hashCode() {
+        return this.toString().hashCode();
+    }
 }
