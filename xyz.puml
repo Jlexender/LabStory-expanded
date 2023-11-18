@@ -52,8 +52,10 @@ abstract class "Liquid" as ru.jlexender.se.labstory.basicClasses.Liquid {
 }
 abstract class "Place" as ru.jlexender.se.labstory.basicClasses.Place {
   -String name
+  -Weather weather
   __
   +String getName()
+  +String getWeather()
 }
 class "Time" as ru.jlexender.se.labstory.basicClasses.Time {
   -int months
@@ -180,6 +182,19 @@ enum "Mood" as ru.jlexender.se.labstory.enums.Mood {
   + {static}Mood valueOf(String)
   +String getValue()
 }
+enum "Weather" as ru.jlexender.se.labstory.enums.Weather {
+  CLOUDY
+  SUNNY
+  SNOWY
+  RAINY
+  THUNDER
+  ..
+  -String value
+  __
+  + {static}Weather[] values()
+  + {static}Weather valueOf(String)
+  +String getValue()
+}
 interface "IDrinkingItem" as ru.jlexender.se.labstory.interfaces.IDrinkingItem {
 }
 interface "IFood" as ru.jlexender.se.labstory.interfaces.IFood {
@@ -199,6 +214,7 @@ ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.classesList.Item.Glas
 ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.classesList.Liquid.Juice
 ru.jlexender.se.labstory.basicClasses.Action --> ru.jlexender.se.labstory.enums.Mood
 ru.jlexender.se.labstory.basicClasses.Human --> ru.jlexender.se.labstory.enums.Mood
+ru.jlexender.se.labstory.basicClasses.Place --> ru.jlexender.se.labstory.enums.Weather
 ru.jlexender.se.labstory.classesList.Action.DoNotListen -u-|> ru.jlexender.se.labstory.basicClasses.Action
 ru.jlexender.se.labstory.classesList.Action.DoNotListen --> ru.jlexender.se.labstory.basicClasses.Human
 ru.jlexender.se.labstory.classesList.Action.DrinkFromItem -u-|> ru.jlexender.se.labstory.basicClasses.Action
@@ -242,4 +258,5 @@ ru.jlexender.se.labstory.classesList.Place.Porch .u.|> ru.jlexender.se.labstory.
 ru.jlexender.se.labstory.classesList.Place.RulleHome -u-|> ru.jlexender.se.labstory.basicClasses.Place
 ru.jlexender.se.labstory.enums.Color -u-|> java.lang.Enum
 ru.jlexender.se.labstory.enums.Mood -u-|> java.lang.Enum
+ru.jlexender.se.labstory.enums.Weather -u-|> java.lang.Enum
 @enduml

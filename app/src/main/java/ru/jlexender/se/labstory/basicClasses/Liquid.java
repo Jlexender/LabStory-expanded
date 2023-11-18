@@ -10,4 +10,5 @@ public abstract class Liquid {
     public String getName() {
         return name;
     }
+
 }
