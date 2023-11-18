@@ -30,6 +30,9 @@ abstract class "Action" as ru.jlexender.se.labstory.basicClasses.Action {
   __
   ~void applyChanges(Human)
   ~String describe()
+  +boolean equals(Object)
+  +String toString()
+  +int hashCode()
 }
 class "Human" as ru.jlexender.se.labstory.basicClasses.Human {
   -String name
@@ -39,16 +42,25 @@ class "Human" as ru.jlexender.se.labstory.basicClasses.Human {
   +Mood getMood()
   ~void setMood(Mood)
   +void doAction(Action)
+  +boolean equals(Object)
+  +String toString()
+  +int hashCode()
 }
 abstract class "Item" as ru.jlexender.se.labstory.basicClasses.Item {
   -String name
   __
   +String getName()
+  +boolean equals(Object)
+  +String toString()
+  +int hashCode()
 }
 abstract class "Liquid" as ru.jlexender.se.labstory.basicClasses.Liquid {
   -String name
   __
   +String getName()
+  +boolean equals(Object)
+  +String toString()
+  +int hashCode()
 }
 abstract class "Place" as ru.jlexender.se.labstory.basicClasses.Place {
   -String name
@@ -56,6 +68,9 @@ abstract class "Place" as ru.jlexender.se.labstory.basicClasses.Place {
   __
   +String getName()
   +String getWeather()
+  +boolean equals(Object)
+  +String toString()
+  +int hashCode()
 }
 class "Time" as ru.jlexender.se.labstory.basicClasses.Time {
   -int months
@@ -63,6 +78,9 @@ class "Time" as ru.jlexender.se.labstory.basicClasses.Time {
   __
   +int getMonths()
   +int getYears()
+  +boolean equals(Object)
+  +String toString()
+  +int hashCode()
 }
 class "DoNotListen" as ru.jlexender.se.labstory.classesList.Action.DoNotListen {
   -Human human
