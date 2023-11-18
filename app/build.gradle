@@ -41,3 +41,15 @@ tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+application {
+    mainClass = 'ru.jlexender.se.labstory.App'
+}
+
+jar {
+  manifest {
+    attributes(
+      'Main-Class': 'ru.jlexender.se.labstory.App'
+    )
+  }
+}

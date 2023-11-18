@@ -1,6 +1,6 @@
 package ru.jlexender.se.labstory;
 
-import ru.jlexender.se.labstory.abstractClasses.*;
+import ru.jlexender.se.labstory.basicClasses.*;
 import ru.jlexender.se.labstory.classesList.Place.*;
 import ru.jlexender.se.labstory.classesList.Human.*;
 import ru.jlexender.se.labstory.classesList.Action.*;
@@ -45,7 +45,7 @@ public class Book {
        karlsson.doAction(new EatItem(buns));
        karlsson.doAction(new PourDrinkingItem(glass, juice));
        karlsson.doAction(new DrinkFromItem(glass));
-       baby.doAction(new GiftItem(glass, karlsson));
+       baby.doAction(new GiftItem(glass, karlsson, new Time(0, 3)));
        karlsson.doAction(new HoldItem(glass));
        karlsson.doAction(new RollItem(glass));
     }

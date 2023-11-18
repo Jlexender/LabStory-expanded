@@ -1,7 +1,7 @@
 package ru.jlexender.se.labstory.classesList.Human;
 
 import ru.jlexender.se.labstory.enums.Mood;
-import ru.jlexender.se.labstory.abstractClasses.Human;
+import ru.jlexender.se.labstory.basicClasses.Human;
 
 public class Baby extends Human {
     public Baby() {

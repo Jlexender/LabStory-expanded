@@ -1,6 +1,6 @@
 package ru.jlexender.se.labstory.classesList.Item;
 
-import ru.jlexender.se.labstory.abstractClasses.Item;
+import ru.jlexender.se.labstory.basicClasses.Item;
 import ru.jlexender.se.labstory.interfaces.IRollable;
 import ru.jlexender.se.labstory.interfaces.IDrinkingItem;
 import ru.jlexender.se.labstory.enums.Color;

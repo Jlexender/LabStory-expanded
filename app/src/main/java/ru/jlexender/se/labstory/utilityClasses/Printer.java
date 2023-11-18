@@ -1,6 +1,6 @@
 package ru.jlexender.se.labstory.utilityClasses;
 
-import ru.jlexender.se.labstory.abstractClasses.*;
+import ru.jlexender.se.labstory.basicClasses.*;
 
 public class Printer {
     

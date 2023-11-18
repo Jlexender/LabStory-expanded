@@ -1,4 +1,4 @@
-package ru.jlexender.se.labstory.abstractClasses;
+package ru.jlexender.se.labstory.basicClasses;
 
 public abstract class Place {
     private String name;

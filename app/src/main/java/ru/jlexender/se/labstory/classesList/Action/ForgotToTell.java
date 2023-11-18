@@ -1,7 +1,7 @@
 package ru.jlexender.se.labstory.classesList.Action;
 
-import ru.jlexender.se.labstory.abstractClasses.Action;
-import ru.jlexender.se.labstory.abstractClasses.Human;
+import ru.jlexender.se.labstory.basicClasses.Action;
+import ru.jlexender.se.labstory.basicClasses.Human;
 
 public class ForgotToTell extends Action {
     private Human human;

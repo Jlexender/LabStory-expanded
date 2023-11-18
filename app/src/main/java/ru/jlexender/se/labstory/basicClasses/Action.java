@@ -1,4 +1,4 @@
-package ru.jlexender.se.labstory.abstractClasses;
+package ru.jlexender.se.labstory.basicClasses;
 
 import ru.jlexender.se.labstory.enums.Mood;
 

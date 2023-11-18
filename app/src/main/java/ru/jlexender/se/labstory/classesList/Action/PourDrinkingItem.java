@@ -1,8 +1,8 @@
 package ru.jlexender.se.labstory.classesList.Action;
 
-import ru.jlexender.se.labstory.abstractClasses.Item;
-import ru.jlexender.se.labstory.abstractClasses.Action;
-import ru.jlexender.se.labstory.abstractClasses.Liquid;
+import ru.jlexender.se.labstory.basicClasses.Item;
+import ru.jlexender.se.labstory.basicClasses.Action;
+import ru.jlexender.se.labstory.basicClasses.Liquid;
 import ru.jlexender.se.labstory.interfaces.IDrinkingItem;
 
 public class PourDrinkingItem extends Action {

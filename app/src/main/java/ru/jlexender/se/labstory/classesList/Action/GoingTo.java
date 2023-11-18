@@ -1,7 +1,7 @@
 package ru.jlexender.se.labstory.classesList.Action;
 
-import ru.jlexender.se.labstory.abstractClasses.Place;
-import ru.jlexender.se.labstory.abstractClasses.Action;
+import ru.jlexender.se.labstory.basicClasses.Place;
+import ru.jlexender.se.labstory.basicClasses.Action;
 
 public class GoingTo extends Action {
     private Place place;

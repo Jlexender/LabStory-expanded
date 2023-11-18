@@ -1,9 +1,9 @@
-package ru.jlexender.se.labstory.abstractClasses;
+package ru.jlexender.se.labstory.basicClasses;
 
-public abstract class Item {
+public abstract class Liquid {
     private String name;
 
-    public Item(String name) {
+    public Liquid(String name) {
         this.name = name;
     }
     

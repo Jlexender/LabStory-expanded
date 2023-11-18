@@ -1,6 +1,6 @@
 package ru.jlexender.se.labstory.classesList.Action;
 
-import ru.jlexender.se.labstory.abstractClasses.Action;
+import ru.jlexender.se.labstory.basicClasses.Action;
 import ru.jlexender.se.labstory.enums.Mood;
 
 public class StopThinking extends Action {
