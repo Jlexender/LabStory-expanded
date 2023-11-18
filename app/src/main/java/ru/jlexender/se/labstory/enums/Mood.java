@@ -8,13 +8,13 @@ public enum Mood {
     WORRIED("worried");
 
     private String value;
-
+    
     private Mood(String value) {
         this.value = value;
     }
-
+    
     public String getValue() {
-        return value;
+            return value;            
     }
 
 }

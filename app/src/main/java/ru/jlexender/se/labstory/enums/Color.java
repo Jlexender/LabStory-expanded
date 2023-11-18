@@ -13,12 +13,13 @@ public enum Color {
     BLACK("black");
 
     private String value;
-
+    
     private Color(String value) {
         this.value = value;
     }
-
+    
     public String getValue() {
-        return value;
+        return value;            
     }
+
 }
