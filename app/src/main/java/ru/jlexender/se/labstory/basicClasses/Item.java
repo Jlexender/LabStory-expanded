@@ -15,4 +15,11 @@ public abstract class Item {
     public boolean equals(Object object) {
         return this == object;
     }
+    
+    @Override
+    public String toString() {
+        return "Item{"
+               + "name='" + name + '\'' 
+               + '}';
+    }
 }

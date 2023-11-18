@@ -28,4 +28,13 @@ public abstract class Action {
     public boolean equals(Object object) {
         return this == object;
     }
+
+    @Override
+    public String toString() {
+        return "Action{"
+               + "description='" + description + '\'' 
+               + ", mood=" + mood
+               + ", moodChanging=" + moodChanging
+               + '}';
+    }
 }

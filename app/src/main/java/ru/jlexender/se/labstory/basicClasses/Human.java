@@ -38,5 +38,14 @@ public class Human {
     public boolean equals(Object human) {
         return this == human;
     }
+    
+    @Override
+    public String toString() {
+        return "Human{"
+               + "name='" + name + '\'' 
+               + ", mood=" + mood
+               + '}';
+    }
+
 }
 

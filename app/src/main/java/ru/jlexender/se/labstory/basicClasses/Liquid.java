@@ -16,4 +16,10 @@ public abstract class Liquid {
         return this == object;
     }
 
+    @Override
+    public String toString() {
+        return "Liquid{"
+               + "name='" + name + '\'' 
+               + '}';
+    }
 }

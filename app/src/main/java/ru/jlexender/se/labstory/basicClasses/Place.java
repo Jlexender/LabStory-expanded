@@ -8,6 +8,7 @@ public abstract class Place {
 
     public Place(String name) {
         this.name = name;
+        this.weather = Weather.CLOUDY;
     }
 
     public Place(String name, Weather weather) {
@@ -26,6 +27,14 @@ public abstract class Place {
     @Override
     public boolean equals(Object object) {
         return this == object;
+    }
+    
+    @Override
+    public String toString() {
+        return "Place{"
+               + "name='" + name + '\'' 
+               + ", weather=" + weather + '\'' 
+               + '}';
     }
 }
 
