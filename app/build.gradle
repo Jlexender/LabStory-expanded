@@ -8,6 +8,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id 'io.gitlab.plunts.plantuml' version '2.1.2' 
 }
 
 repositories {
@@ -53,3 +54,14 @@ jar {
     )
   }
 }
+
+classDiagrams {
+  diagram {
+    name "Visualize"
+    include packages().withName("ru.jlexender.se.labstory")
+	include superclasses()	
+	include methods()
+    writeTo file('xyz.puml')
+  }
+}
+

@@ -1,0 +1,201 @@
+@startuml
+!pragma useIntermediatePackages false
+
+package "java.lang" {
+  class "Enum" as java.lang.Enum {
+  }
+}
+package "ru.jlexender.se.labstory" {
+  class "App" as ru.jlexender.se.labstory.App {
+    + {static}void main(String[])
+  }
+  class "Book" as ru.jlexender.se.labstory.Book {
+    +void go()
+  }
+  package "basicClasses" {
+    abstract class "Action" as ru.jlexender.se.labstory.basicClasses.Action {
+      ~void applyChanges(Human)
+      ~String describe()
+    }
+    class "Human" as ru.jlexender.se.labstory.basicClasses.Human {
+      +String getName()
+      +Mood getMood()
+      ~void setMood(Mood)
+      +void doAction(Action)
+    }
+    abstract class "Item" as ru.jlexender.se.labstory.basicClasses.Item {
+      +String getName()
+    }
+    abstract class "Liquid" as ru.jlexender.se.labstory.basicClasses.Liquid {
+      +String getName()
+    }
+    abstract class "Place" as ru.jlexender.se.labstory.basicClasses.Place {
+      +String getName()
+    }
+    class "Time" as ru.jlexender.se.labstory.basicClasses.Time {
+      +int getMonths()
+      +int getYears()
+    }
+  }
+  package "classesList" {
+    package "Action" {
+      class "DoNotListen" as ru.jlexender.se.labstory.classesList.Action.DoNotListen {
+        ~String describe()
+      }
+      class "DrinkFromItem" as ru.jlexender.se.labstory.classesList.Action.DrinkFromItem {
+        ~String describe()
+      }
+      class "EatItem" as ru.jlexender.se.labstory.classesList.Action.EatItem {
+        ~String describe()
+      }
+      class "ForgotToTell" as ru.jlexender.se.labstory.classesList.Action.ForgotToTell {
+        ~String describe()
+      }
+      class "GiftItem" as ru.jlexender.se.labstory.classesList.Action.GiftItem {
+        ~String describe()
+      }
+      class "GoingTo" as ru.jlexender.se.labstory.classesList.Action.GoingTo {
+        ~String describe()
+      }
+      class "HoldItem" as ru.jlexender.se.labstory.classesList.Action.HoldItem {
+        ~String describe()
+      }
+      class "Lives" as ru.jlexender.se.labstory.classesList.Action.Lives {
+        ~String describe()
+      }
+      class "PourDrinkingItem" as ru.jlexender.se.labstory.classesList.Action.PourDrinkingItem {
+        ~String describe()
+      }
+      class "RollItem" as ru.jlexender.se.labstory.classesList.Action.RollItem {
+        ~String describe()
+      }
+      class "Sit" as ru.jlexender.se.labstory.classesList.Action.Sit {
+        ~String describe()
+      }
+      class "StartThinking" as ru.jlexender.se.labstory.classesList.Action.StartThinking {
+        ~String describe()
+      }
+      class "StopThinking" as ru.jlexender.se.labstory.classesList.Action.StopThinking {
+        ~String describe()
+      }
+      class "Tell" as ru.jlexender.se.labstory.classesList.Action.Tell {
+        ~String describe()
+      }
+    }
+    package "Item" {
+      class "Buns" as ru.jlexender.se.labstory.classesList.Item.Buns {
+      }
+      class "Glass" as ru.jlexender.se.labstory.classesList.Item.Glass {
+      }
+    }
+    package "Liquid" {
+      class "Juice" as ru.jlexender.se.labstory.classesList.Liquid.Juice {
+      }
+    }
+    package "Place" {
+      class "BabyHome" as ru.jlexender.se.labstory.classesList.Place.BabyHome {
+      }
+      class "FilleHome" as ru.jlexender.se.labstory.classesList.Place.FilleHome {
+      }
+      class "Porch" as ru.jlexender.se.labstory.classesList.Place.Porch {
+      }
+      class "RulleHome" as ru.jlexender.se.labstory.classesList.Place.RulleHome {
+      }
+    }
+  }
+  package "enums" {
+    enum "Color" as ru.jlexender.se.labstory.enums.Color {
+      NONE
+      RED
+      BLUE
+      LIGHTBLUE
+      GREEN
+      YELLOW
+      ORANGE
+      PINK
+      WHITE
+      BLACK
+      __
+      + {static}Color[] values()
+      + {static}Color valueOf(String)
+      +String getValue()
+    }
+    enum "Mood" as ru.jlexender.se.labstory.enums.Mood {
+      NORMAL
+      HAPPY
+      ANGRY
+      SAD
+      WORRIED
+      __
+      + {static}Mood[] values()
+      + {static}Mood valueOf(String)
+      +String getValue()
+    }
+  }
+  package "interfaces" {
+    interface "IDrinkingItem" as ru.jlexender.se.labstory.interfaces.IDrinkingItem {
+    }
+    interface "IFood" as ru.jlexender.se.labstory.interfaces.IFood {
+    }
+    interface "IRollable" as ru.jlexender.se.labstory.interfaces.IRollable {
+    }
+    interface "ISeat" as ru.jlexender.se.labstory.interfaces.ISeat {
+    }
+  }
+  package "utilityClasses" {
+    class "Printer" as ru.jlexender.se.labstory.utilityClasses.Printer {
+      +void print()
+    }
+  }
+}
+ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.classesList.Place.Porch
+ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.basicClasses.Human
+ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.basicClasses.Place
+ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.classesList.Item.Buns
+ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.classesList.Item.Glass
+ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.classesList.Liquid.Juice
+ru.jlexender.se.labstory.basicClasses.Action --> ru.jlexender.se.labstory.enums.Mood
+ru.jlexender.se.labstory.basicClasses.Human --> ru.jlexender.se.labstory.enums.Mood
+ru.jlexender.se.labstory.classesList.Action.DoNotListen -u-|> ru.jlexender.se.labstory.basicClasses.Action
+ru.jlexender.se.labstory.classesList.Action.DoNotListen --> ru.jlexender.se.labstory.basicClasses.Human
+ru.jlexender.se.labstory.classesList.Action.DrinkFromItem -u-|> ru.jlexender.se.labstory.basicClasses.Action
+ru.jlexender.se.labstory.classesList.Action.DrinkFromItem --> ru.jlexender.se.labstory.interfaces.IDrinkingItem
+ru.jlexender.se.labstory.classesList.Action.EatItem -u-|> ru.jlexender.se.labstory.basicClasses.Action
+ru.jlexender.se.labstory.classesList.Action.EatItem --> ru.jlexender.se.labstory.interfaces.IFood
+ru.jlexender.se.labstory.classesList.Action.ForgotToTell -u-|> ru.jlexender.se.labstory.basicClasses.Action
+ru.jlexender.se.labstory.classesList.Action.ForgotToTell --> ru.jlexender.se.labstory.basicClasses.Human
+ru.jlexender.se.labstory.classesList.Action.GiftItem -u-|> ru.jlexender.se.labstory.basicClasses.Action
+ru.jlexender.se.labstory.classesList.Action.GiftItem --> ru.jlexender.se.labstory.basicClasses.Time
+ru.jlexender.se.labstory.classesList.Action.GiftItem --> ru.jlexender.se.labstory.basicClasses.Human
+ru.jlexender.se.labstory.classesList.Action.GiftItem --> ru.jlexender.se.labstory.basicClasses.Item
+ru.jlexender.se.labstory.classesList.Action.GoingTo -u-|> ru.jlexender.se.labstory.basicClasses.Action
+ru.jlexender.se.labstory.classesList.Action.GoingTo --> ru.jlexender.se.labstory.basicClasses.Place
+ru.jlexender.se.labstory.classesList.Action.HoldItem -u-|> ru.jlexender.se.labstory.basicClasses.Action
+ru.jlexender.se.labstory.classesList.Action.HoldItem --> ru.jlexender.se.labstory.basicClasses.Item
+ru.jlexender.se.labstory.classesList.Action.Lives -u-|> ru.jlexender.se.labstory.basicClasses.Action
+ru.jlexender.se.labstory.classesList.Action.Lives --> ru.jlexender.se.labstory.basicClasses.Place
+ru.jlexender.se.labstory.classesList.Action.PourDrinkingItem -u-|> ru.jlexender.se.labstory.basicClasses.Action
+ru.jlexender.se.labstory.classesList.Action.PourDrinkingItem --> ru.jlexender.se.labstory.interfaces.IDrinkingItem
+ru.jlexender.se.labstory.classesList.Action.PourDrinkingItem --> ru.jlexender.se.labstory.basicClasses.Liquid
+ru.jlexender.se.labstory.classesList.Action.RollItem -u-|> ru.jlexender.se.labstory.basicClasses.Action
+ru.jlexender.se.labstory.classesList.Action.RollItem --> ru.jlexender.se.labstory.interfaces.IRollable
+ru.jlexender.se.labstory.classesList.Action.Sit -u-|> ru.jlexender.se.labstory.basicClasses.Action
+ru.jlexender.se.labstory.classesList.Action.Sit --> ru.jlexender.se.labstory.interfaces.ISeat
+ru.jlexender.se.labstory.classesList.Action.StartThinking -u-|> ru.jlexender.se.labstory.basicClasses.Action
+ru.jlexender.se.labstory.classesList.Action.StopThinking -u-|> ru.jlexender.se.labstory.basicClasses.Action
+ru.jlexender.se.labstory.classesList.Action.Tell -u-|> ru.jlexender.se.labstory.basicClasses.Action
+ru.jlexender.se.labstory.classesList.Action.Tell --> ru.jlexender.se.labstory.basicClasses.Human
+ru.jlexender.se.labstory.classesList.Item.Buns -u-|> ru.jlexender.se.labstory.basicClasses.Item
+ru.jlexender.se.labstory.classesList.Item.Buns .u.|> ru.jlexender.se.labstory.interfaces.IFood
+ru.jlexender.se.labstory.classesList.Item.Glass -u-|> ru.jlexender.se.labstory.basicClasses.Item
+ru.jlexender.se.labstory.classesList.Item.Glass .u.|> ru.jlexender.se.labstory.interfaces.IRollable
+ru.jlexender.se.labstory.classesList.Item.Glass .u.|> ru.jlexender.se.labstory.interfaces.IDrinkingItem
+ru.jlexender.se.labstory.classesList.Liquid.Juice -u-|> ru.jlexender.se.labstory.basicClasses.Liquid
+ru.jlexender.se.labstory.classesList.Place.BabyHome -u-|> ru.jlexender.se.labstory.basicClasses.Place
+ru.jlexender.se.labstory.classesList.Place.FilleHome -u-|> ru.jlexender.se.labstory.basicClasses.Place
+ru.jlexender.se.labstory.classesList.Place.Porch -u-|> ru.jlexender.se.labstory.basicClasses.Place
+ru.jlexender.se.labstory.classesList.Place.Porch .u.|> ru.jlexender.se.labstory.interfaces.ISeat
+ru.jlexender.se.labstory.classesList.Place.RulleHome -u-|> ru.jlexender.se.labstory.basicClasses.Place
+ru.jlexender.se.labstory.enums.Color -u-|> java.lang.Enum
+ru.jlexender.se.labstory.enums.Mood -u-|> java.lang.Enum
+@enduml
