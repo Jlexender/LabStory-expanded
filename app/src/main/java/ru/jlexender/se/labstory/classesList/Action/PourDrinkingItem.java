@@ -5,7 +5,7 @@ import ru.jlexender.se.labstory.basicClasses.Action;
 import ru.jlexender.se.labstory.basicClasses.Liquid;
 import ru.jlexender.se.labstory.interfaces.IDrinkingItem;
 
-public class PourDrinkingItem extends Action {
+public final class PourDrinkingItem extends Action {
     private IDrinkingItem item;
     private Liquid liquid;
    

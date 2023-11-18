@@ -1,7 +1,7 @@
 package ru.jlexender.se.labstory.basicClasses;
 
+import static ru.jlexender.se.labstory.utilityClasses.Printer.print;
 import ru.jlexender.se.labstory.enums.Mood;
-import ru.jlexender.se.labstory.utilityClasses.Printer;
 
 public class Human {
     private final String name;
@@ -26,14 +26,12 @@ public class Human {
 
     protected void setMood(Mood mood) {
         this.mood = mood;
-        Printer printer = new Printer(this.getName() + " is " + mood.getValue());
-        printer.print();
+        print(this.getName() + " is " + mood.getValue());
     }
 
     public void doAction(Action action) {
+        print(this.getName() + ' ' + action.describe());
         action.applyChanges(this);
-        Printer printer = new Printer(this.getName() + ' ' + action.describe());
-        printer.print();
     }
 }
 

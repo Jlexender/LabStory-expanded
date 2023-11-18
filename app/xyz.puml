@@ -189,9 +189,7 @@ interface "IRollable" as ru.jlexender.se.labstory.interfaces.IRollable {
 interface "ISeat" as ru.jlexender.se.labstory.interfaces.ISeat {
 }
 class "Printer" as ru.jlexender.se.labstory.utilityClasses.Printer {
-  -String printString
-  __
-  +void print()
+  + {static}void print(String)
 }
 ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.classesList.Place.Porch
 ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.basicClasses.Human
@@ -232,6 +230,7 @@ ru.jlexender.se.labstory.classesList.Action.Tell -u-|> ru.jlexender.se.labstory.
 ru.jlexender.se.labstory.classesList.Action.Tell --> ru.jlexender.se.labstory.basicClasses.Human
 ru.jlexender.se.labstory.classesList.Item.Buns -u-|> ru.jlexender.se.labstory.basicClasses.Item
 ru.jlexender.se.labstory.classesList.Item.Buns .u.|> ru.jlexender.se.labstory.interfaces.IFood
+ru.jlexender.se.labstory.classesList.Item.Buns .u.|> ru.jlexender.se.labstory.interfaces.IRollable
 ru.jlexender.se.labstory.classesList.Item.Glass -u-|> ru.jlexender.se.labstory.basicClasses.Item
 ru.jlexender.se.labstory.classesList.Item.Glass .u.|> ru.jlexender.se.labstory.interfaces.IRollable
 ru.jlexender.se.labstory.classesList.Item.Glass .u.|> ru.jlexender.se.labstory.interfaces.IDrinkingItem

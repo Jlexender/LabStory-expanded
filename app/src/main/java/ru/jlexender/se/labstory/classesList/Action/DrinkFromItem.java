@@ -4,7 +4,7 @@ import ru.jlexender.se.labstory.basicClasses.Item;
 import ru.jlexender.se.labstory.basicClasses.Action;
 import ru.jlexender.se.labstory.interfaces.IDrinkingItem;
 
-public class DrinkFromItem extends Action {
+public final class DrinkFromItem extends Action {
     private IDrinkingItem item;
    
     public DrinkFromItem(IDrinkingItem item) {

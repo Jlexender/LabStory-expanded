@@ -37,8 +37,8 @@ public class Book {
        fille.doAction(new Lives(filleHome));
        frokenBock.doAction(new GoingTo(babyHome));
        uncleJulius.doAction(new GoingTo(babyHome));
-       baby.doAction(new ForgotToTell(karlsson));
-       baby.doAction(new StopThinking(Mood.WORRIED));
+       baby.doAction(new StopThinking());
+       baby.doAction(new ForgotToTell(karlsson, Mood.WORRIED));
        baby.doAction(new Tell(karlsson));
        karlsson.doAction(new DoNotListen(baby));
        karlsson.doAction(new EatItem(buns));

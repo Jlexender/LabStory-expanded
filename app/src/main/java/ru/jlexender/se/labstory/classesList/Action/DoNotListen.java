@@ -3,7 +3,7 @@ package ru.jlexender.se.labstory.classesList.Action;
 import ru.jlexender.se.labstory.basicClasses.Action;
 import ru.jlexender.se.labstory.basicClasses.Human;
 
-public class DoNotListen extends Action {
+public final class DoNotListen extends Action {
     private Human human; 
     private boolean ignoringAll;
 

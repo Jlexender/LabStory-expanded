@@ -3,7 +3,7 @@ package ru.jlexender.se.labstory.classesList.Action;
 import ru.jlexender.se.labstory.basicClasses.Item;
 import ru.jlexender.se.labstory.basicClasses.Action;
 
-public class HoldItem extends Action {
+public final class HoldItem extends Action {
     private Item item;
    
     public HoldItem(Item item) {

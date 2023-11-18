@@ -3,7 +3,7 @@ package ru.jlexender.se.labstory.classesList.Action;
 import ru.jlexender.se.labstory.basicClasses.Action;
 import ru.jlexender.se.labstory.enums.Mood;
 
-public class StartThinking extends Action {
+public final class StartThinking extends Action {
 
     public StartThinking() {
         super("to start thinking");
@@ -15,7 +15,7 @@ public class StartThinking extends Action {
 
     @Override
     protected String describe() {
-        return "has started to think:";
+        return "has started to think ---";
     }
     
 }

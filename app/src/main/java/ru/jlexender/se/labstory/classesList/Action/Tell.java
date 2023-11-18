@@ -3,7 +3,7 @@ package ru.jlexender.se.labstory.classesList.Action;
 import ru.jlexender.se.labstory.basicClasses.Action;
 import ru.jlexender.se.labstory.basicClasses.Human;
 
-public class Tell extends Action {
+public final class Tell extends Action {
     private Human human;
    
     public Tell(Human human) {

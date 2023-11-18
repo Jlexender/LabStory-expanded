@@ -4,7 +4,7 @@ import ru.jlexender.se.labstory.basicClasses.Item;
 import ru.jlexender.se.labstory.basicClasses.Action;
 import ru.jlexender.se.labstory.interfaces.IRollable;
 
-public class RollItem extends Action {
+public final class RollItem extends Action {
     private IRollable item;
    
     public RollItem(IRollable item) {

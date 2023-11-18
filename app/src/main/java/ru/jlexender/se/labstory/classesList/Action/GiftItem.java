@@ -5,7 +5,7 @@ import ru.jlexender.se.labstory.basicClasses.Action;
 import ru.jlexender.se.labstory.basicClasses.Human;
 import ru.jlexender.se.labstory.basicClasses.Time;
 
-public class GiftItem extends Action {
+public final class GiftItem extends Action {
     private Item item;
     private Human human;
     private Time time;

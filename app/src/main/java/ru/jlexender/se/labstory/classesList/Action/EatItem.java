@@ -4,7 +4,7 @@ import ru.jlexender.se.labstory.basicClasses.Item;
 import ru.jlexender.se.labstory.basicClasses.Action;
 import ru.jlexender.se.labstory.interfaces.IFood;
 
-public class EatItem extends Action {
+public final class EatItem extends Action {
     private IFood item;
    
     public EatItem(IFood item) {
