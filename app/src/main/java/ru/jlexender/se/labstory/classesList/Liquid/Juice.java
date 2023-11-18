@@ -4,6 +4,6 @@ import ru.jlexender.se.labstory.basicClasses.Liquid;
 
 public class Juice extends Liquid {
     public Juice() {
-        super("сок");
+        super("juice");
     }
 }

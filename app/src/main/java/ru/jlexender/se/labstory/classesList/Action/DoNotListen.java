@@ -8,20 +8,20 @@ public class DoNotListen extends Action {
     private boolean ignoringAll;
 
     public DoNotListen(Human human) {
-        super("не слушать" + human.getName());
+        super("do not listen to" + human.getName());
         this.human = human;
         ignoringAll = false;
     }
 
     public DoNotListen() {
-        super("не слушать никого");
+        super("isn't listening to anyone");
         ignoringAll = true;
     }
 
     @Override
     protected String describe() {
-        if (ignoringAll) return "не слушает никого";
-        else return "не слушает " + human.getName() + "(a)"; 
+        if (ignoringAll) return "isn't listening to anyone";
+        else return "isn't listening to " + human.getName(); 
     }
     
 }

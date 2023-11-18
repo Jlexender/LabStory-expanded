@@ -6,8 +6,8 @@ public class Printer {
     
     private String printString;
 
-    public Printer(Human human, String actionDescription) {
-        printString = human.getName() + ' ' + actionDescription;    
+    public Printer(String printString) {
+        this.printString = printString;
     }
 
     public void print() {

@@ -8,13 +8,13 @@ public class RollItem extends Action {
     private IRollable item;
    
     public RollItem(IRollable item) {
-        super("катать " + ((Item)item).getName());
+        super("to roll " + ((Item)item).getName());
         this.item = item;
     }
 
     @Override
     protected String describe() {
-        return "катает " + ((Item)item).getName(); 
+        return "rolls " + ((Item)item).getName(); 
     }
     
 }

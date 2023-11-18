@@ -1,11 +1,11 @@
 package ru.jlexender.se.labstory.enums;
 
 public enum Mood {
-    NORMAL("нормальный"),
-    HAPPY("весёлый"),
-    ANGRY("злой"),
-    SAD("грустный"),
-    WORRIED("взволнованный");
+    NORMAL("normal"),
+    HAPPY("happy"),
+    ANGRY("angry"),
+    SAD("sad"),
+    WORRIED("worried");
 
     private String value;
 

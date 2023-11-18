@@ -8,13 +8,13 @@ public class DrinkFromItem extends Action {
     private IDrinkingItem item;
    
     public DrinkFromItem(IDrinkingItem item) {
-        super("выпить из " + ((Item)item).getName());
+        super("drink from " + ((Item)item).getName());
         this.item = item;
     }
 
     @Override
     protected String describe() {
-        return "пьёт из " + ((Item)item).getName(); 
+        return "drinks from " + ((Item)item).getName(); 
     }
     
 }

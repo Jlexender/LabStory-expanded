@@ -8,13 +8,13 @@ public class Sit extends Action {
     private ISeat place;
    
     public Sit(ISeat place) {
-        super("сесть на " + ((Place)place).getName());
+        super("sit on " + ((Place)place).getName());
         this.place = place;
     }
 
     @Override
     protected String describe() {
-        return "сел на " + ((Place)place).getName(); 
+        return "sat on " + ((Place)place).getName(); 
     }
     
 }

@@ -12,7 +12,7 @@ public class GiftItem extends Action {
     boolean timeAgo;
    
     public GiftItem(Item item, Human human) {
-        super("подарить " + item.getName() + ' ' + human.getName());
+        super("gift " + item.getName() + ' ' + human.getName());
         this.item = item;
         this.human = human;
         timeAgo = false;
@@ -26,9 +26,9 @@ public class GiftItem extends Action {
     
     @Override
     protected String describe() {
-        if (timeAgo) return "дарит " + item.getName() + ' ' + human.getName() + ' '
-            + time.getYears() + " года и " + time.getMonths() + " месяца назад"; 
-        else return "дарит " + item.getName() + ' ' + human.getName();
+        if (timeAgo) return "gifted " + item.getName() + " to " + human.getName() + " "
+            + time.getYears() + " years and " + time.getMonths() + " months ago"; 
+        else return "gifts " + item.getName() + " to " + human.getName();
     }
     
 }

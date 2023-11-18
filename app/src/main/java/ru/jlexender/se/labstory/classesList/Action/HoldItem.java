@@ -7,13 +7,13 @@ public class HoldItem extends Action {
     private Item item;
    
     public HoldItem(Item item) {
-        super("держать" + item.getName());
+        super("to hold " + item.getName());
         this.item = item;
     }
 
     @Override
     protected String describe() {
-        return "держит " + item.getName(); 
+        return "holds " + item.getName(); 
     }
     
 }

@@ -7,13 +7,13 @@ public class Lives extends Action {
     private Place place;
    
     public Lives(Place place) {
-        super("жить в " + place.getName());
+        super("to live in " + place.getName());
         this.place = place;
     }
 
     @Override
     protected String describe() {
-        return "живёт в " + place.getName(); 
+        return "lives in " + place.getName(); 
     }
     
 }

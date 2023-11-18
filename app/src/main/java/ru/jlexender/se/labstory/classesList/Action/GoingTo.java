@@ -7,13 +7,13 @@ public class GoingTo extends Action {
     private Place place;
    
     public GoingTo(Place place) {
-        super("собираться в " + place.getName());
+        super("to be going to " + place.getName());
         this.place = place;
     }
 
     @Override
     protected String describe() {
-        return "собирается в " + place.getName(); 
+        return "is going to " + place.getName(); 
     }
     
 }

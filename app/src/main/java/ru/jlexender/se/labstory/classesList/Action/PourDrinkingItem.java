@@ -10,14 +10,14 @@ public class PourDrinkingItem extends Action {
     private Liquid liquid;
    
     public PourDrinkingItem(IDrinkingItem item, Liquid liquid) {
-        super("налить в " + ((Item)item).getName() + ' ' + liquid.getName());
+        super("pour " + liquid.getName() + " into " + ((Item)item).getName());
         this.item = item;
         this.liquid = liquid;
     }
 
     @Override
     protected String describe() {
-        return "наливает в " + ((Item)item).getName() + ' ' + liquid.getName(); 
+        return "pours " + liquid.getName() + " into " + ((Item)item).getName(); 
     }
     
 }

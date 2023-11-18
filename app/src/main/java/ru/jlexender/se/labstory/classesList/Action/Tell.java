@@ -7,13 +7,13 @@ public class Tell extends Action {
     private Human human;
    
     public Tell(Human human) {
-        super("говорить " + human.getName());
+        super("tell to " + human.getName());
         this.human = human;
     }
 
     @Override
     protected String describe() {
-        return "говорит " + human.getName() + "(у)"; 
+        return "talks to " + human.getName(); 
     }
     
 }

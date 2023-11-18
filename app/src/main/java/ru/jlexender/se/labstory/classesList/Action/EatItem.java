@@ -8,13 +8,13 @@ public class EatItem extends Action {
     private IFood item;
    
     public EatItem(IFood item) {
-        super("есть " + ((Item)item).getName());
+        super("eat " + ((Item)item).getName());
         this.item = item;
     }
 
     @Override
     protected String describe() {
-        return "ест " + ((Item)item).getName(); 
+        return "eats " + ((Item)item).getName(); 
     }
     
 }

@@ -7,13 +7,13 @@ public class ForgotToTell extends Action {
     private Human human;
         
     public ForgotToTell(Human human) {
-        super("забыл сказать " + human.getName());
+        super("to forget to tell " + human.getName());
         this.human = human;
     }
     
     @Override
     protected String describe() {
-        return "забыл сказать " + human.getName();
+        return "has forgotten to tell " + human.getName();
     }
     
 }

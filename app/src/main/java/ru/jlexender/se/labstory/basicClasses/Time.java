@@ -1,7 +1,7 @@
 package ru.jlexender.se.labstory.basicClasses;
 
 public class Time {
-    private int months, years;
+    private final int months, years;
 
     public Time(int years, int months) {
         this.months = months;

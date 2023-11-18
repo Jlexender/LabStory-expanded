@@ -1,7 +1,7 @@
 package ru.jlexender.se.labstory.basicClasses;
 
 public abstract class Liquid {
-    private String name;
+    private final String name;
 
     public Liquid(String name) {
         this.name = name;

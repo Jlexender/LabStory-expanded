@@ -5,7 +5,7 @@ import ru.jlexender.se.labstory.basicClasses.Place;
 public class BabyHome extends Place {
 
     public BabyHome() {
-        super("дом Малыша");
+        super("baby's home");
     }
     
 }

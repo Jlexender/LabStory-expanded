@@ -1,16 +1,16 @@
 package ru.jlexender.se.labstory.enums;
 
 public enum Color {
-    NONE("без цвета"),
-    RED("красный"),
-    BLUE("синий"),
-    LIGHTBLUE("голубой"),
-    GREEN("зелёный"),
-    YELLOW("жёлтый"),
-    ORANGE("оранжевый"),
-    PINK("розовый"),
-    WHITE("белый"),
-    BLACK("чёрный");
+    NONE("no color"),
+    RED("red"),
+    BLUE("blue"),
+    LIGHTBLUE("light blue"),
+    GREEN("greeen"),
+    YELLOW("yellow"),
+    ORANGE("orange"),
+    PINK("pink"),
+    WHITE("white"),
+    BLACK("black");
 
     private String value;
 

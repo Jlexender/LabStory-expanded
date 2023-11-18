@@ -2,7 +2,6 @@ package ru.jlexender.se.labstory;
 
 import ru.jlexender.se.labstory.basicClasses.*;
 import ru.jlexender.se.labstory.classesList.Place.*;
-import ru.jlexender.se.labstory.classesList.Human.*;
 import ru.jlexender.se.labstory.classesList.Action.*;
 import ru.jlexender.se.labstory.classesList.Item.*;
 import ru.jlexender.se.labstory.classesList.Liquid.*;
@@ -12,12 +11,12 @@ import ru.jlexender.se.labstory.enums.*;
 
 public class Book {
 
-    Human karlsson = new Human("Карлсон");
-    Human baby = new Human("Малыш");
-    Human rulle = new Human("Рулле");
-    Human fille = new Human("Филле");
-    Human frokenBock = new Human("Фрекен Бок");
-    Human uncleJulius = new Human("Дядя Юлиус");
+    Human karlsson = new Human("Karlsson");
+    Human baby = new Human("Baby");
+    Human rulle = new Human("Rulle");
+    Human fille = new Human("Fille");
+    Human frokenBock = new Human("Froken Bock");
+    Human uncleJulius = new Human("uncle Julius");
 
     Porch porch = new Porch();
     Place rulleHome = new RulleHome();

@@ -6,16 +6,16 @@ import ru.jlexender.se.labstory.enums.Mood;
 public class StopThinking extends Action {
 
     public StopThinking() {
-        super("закончить думать");
+        super("to stop thinking");
     }
 
     public StopThinking(Mood mood) {
-        super("закончил думать", mood);
+        super("to stop thinking", mood);
     }
 
     @Override
     protected String describe() {
-        return "закончил думать";
+        return "has stopped thinking";
     }
     
 }

@@ -7,7 +7,7 @@ public class Buns extends Item implements IFood {
     private String name;
 
     public Buns() {
-        super("булочки");
+        super("buns");
     }
 
 }

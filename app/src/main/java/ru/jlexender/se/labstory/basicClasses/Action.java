@@ -22,6 +22,6 @@ public abstract class Action {
         if (moodChanging) human.setMood(mood); 
     }
 
-    protected String describe() { return "Something happened"; } 
+    protected String describe() { return "Something has happened"; } 
 
 }
