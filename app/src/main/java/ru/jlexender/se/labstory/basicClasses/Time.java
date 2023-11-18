@@ -16,5 +16,9 @@ public class Time {
     public int getMonths() { return months; }
     public int getYears() { return years; }
 
+    @Override
+    public boolean equals(Object object) {
+        return this == object;
+    }
 }
 

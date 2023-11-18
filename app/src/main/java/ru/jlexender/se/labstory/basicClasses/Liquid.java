@@ -10,5 +10,10 @@ public abstract class Liquid {
     public String getName() {
         return name;
     }
+    
+    @Override
+    public boolean equals(Object object) {
+        return this == object;
+    }
 
 }

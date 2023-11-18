@@ -24,4 +24,8 @@ public abstract class Action {
 
     protected String describe() { return "Something has happened"; } 
 
+    @Override
+    public boolean equals(Object object) {
+        return this == object;
+    }
 }

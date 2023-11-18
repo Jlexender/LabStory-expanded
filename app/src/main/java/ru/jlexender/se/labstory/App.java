@@ -12,6 +12,11 @@ import ru.jlexender.se.labstory.enums.*;
 
 public class App {
     public static void main(String[] args) {
+
+        Human karl1 = new Human("Карлсон");
+        Human karl2 = new Human("Карлсон");
+        
+        System.out.print(karl1.equals(karl2));
         Book story = new Book();
         story.go();
     }

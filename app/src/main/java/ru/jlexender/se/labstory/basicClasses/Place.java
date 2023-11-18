@@ -22,5 +22,10 @@ public abstract class Place {
     public String getWeather() {
         return weather.getValue();
     }
+    
+    @Override
+    public boolean equals(Object object) {
+        return this == object;
+    }
 }
 

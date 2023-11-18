@@ -33,5 +33,10 @@ public class Human {
         print(this.getName() + ' ' + action.describe());
         action.applyChanges(this);
     }
+    
+    @Override
+    public boolean equals(Object human) {
+        return this == human;
+    }
 }
 
