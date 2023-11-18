@@ -3,8 +3,17 @@
  */
 package ru.jlexender.se.labstory;
 
+import ru.jlexender.se.labstory.abstractClasses.*;
+import ru.jlexender.se.labstory.classesList.Place.*;
+import ru.jlexender.se.labstory.classesList.Human.*;
+import ru.jlexender.se.labstory.classesList.Action.*;
+import ru.jlexender.se.labstory.classesList.Item.*;
+import ru.jlexender.se.labstory.interfaces.*;
+import ru.jlexender.se.labstory.enums.*;
+
 public class App {
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        Book story = new Book();
+        story.go();
     }
 }

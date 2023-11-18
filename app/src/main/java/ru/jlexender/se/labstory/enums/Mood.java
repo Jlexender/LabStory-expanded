@@ -1,4 +1,4 @@
-package ru.Jlexender.se.labstory.enums;
+package ru.jlexender.se.labstory.enums;
 
 public enum Mood {
     NORMAL("нормальный"),

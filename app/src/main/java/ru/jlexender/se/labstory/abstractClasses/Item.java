@@ -1,14 +1,13 @@
 package ru.jlexender.se.labstory.abstractClasses;
 
-public abstract class Place {
+public abstract class Item {
     private String name;
 
-    public Place(String name) {
+    public Item(String name) {
         this.name = name;
     }
-
+    
     public String getName() {
         return name;
     }
 }
-

@@ -1,11 +1,27 @@
-package ru.Jlexender.se.labstory.abstractClasses; 
+package ru.jlexender.se.labstory.abstractClasses;
+
+import ru.jlexender.se.labstory.enums.Mood;
 
 public abstract class Action {
     private String description;
+    private Mood mood;
+    private boolean moodChanging;
     
     public Action(String description) {
         this.description = description;
+        moodChanging = false;
     }
 
-    private static void describe();
+    public Action(String description, Mood mood) {
+        this.description = description;
+        this.mood = mood;
+        moodChanging = true;
+    }
+    
+    protected void applyChanges(Human human) {
+        if (moodChanging) human.setMood(mood); 
+    }
+
+    protected String describe() { return "Something happened"; } 
+
 }
