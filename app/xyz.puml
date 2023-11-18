@@ -1,152 +1,197 @@
 @startuml
 !pragma useIntermediatePackages false
 
-package "java.lang" {
-  class "Enum" as java.lang.Enum {
-  }
+class "Enum" as java.lang.Enum {
 }
-package "ru.jlexender.se.labstory" {
-  class "App" as ru.jlexender.se.labstory.App {
-    + {static}void main(String[])
-  }
-  class "Book" as ru.jlexender.se.labstory.Book {
-    +void go()
-  }
-  package "basicClasses" {
-    abstract class "Action" as ru.jlexender.se.labstory.basicClasses.Action {
-      ~void applyChanges(Human)
-      ~String describe()
-    }
-    class "Human" as ru.jlexender.se.labstory.basicClasses.Human {
-      +String getName()
-      +Mood getMood()
-      ~void setMood(Mood)
-      +void doAction(Action)
-    }
-    abstract class "Item" as ru.jlexender.se.labstory.basicClasses.Item {
-      +String getName()
-    }
-    abstract class "Liquid" as ru.jlexender.se.labstory.basicClasses.Liquid {
-      +String getName()
-    }
-    abstract class "Place" as ru.jlexender.se.labstory.basicClasses.Place {
-      +String getName()
-    }
-    class "Time" as ru.jlexender.se.labstory.basicClasses.Time {
-      +int getMonths()
-      +int getYears()
-    }
-  }
-  package "classesList" {
-    package "Action" {
-      class "DoNotListen" as ru.jlexender.se.labstory.classesList.Action.DoNotListen {
-        ~String describe()
-      }
-      class "DrinkFromItem" as ru.jlexender.se.labstory.classesList.Action.DrinkFromItem {
-        ~String describe()
-      }
-      class "EatItem" as ru.jlexender.se.labstory.classesList.Action.EatItem {
-        ~String describe()
-      }
-      class "ForgotToTell" as ru.jlexender.se.labstory.classesList.Action.ForgotToTell {
-        ~String describe()
-      }
-      class "GiftItem" as ru.jlexender.se.labstory.classesList.Action.GiftItem {
-        ~String describe()
-      }
-      class "GoingTo" as ru.jlexender.se.labstory.classesList.Action.GoingTo {
-        ~String describe()
-      }
-      class "HoldItem" as ru.jlexender.se.labstory.classesList.Action.HoldItem {
-        ~String describe()
-      }
-      class "Lives" as ru.jlexender.se.labstory.classesList.Action.Lives {
-        ~String describe()
-      }
-      class "PourDrinkingItem" as ru.jlexender.se.labstory.classesList.Action.PourDrinkingItem {
-        ~String describe()
-      }
-      class "RollItem" as ru.jlexender.se.labstory.classesList.Action.RollItem {
-        ~String describe()
-      }
-      class "Sit" as ru.jlexender.se.labstory.classesList.Action.Sit {
-        ~String describe()
-      }
-      class "StartThinking" as ru.jlexender.se.labstory.classesList.Action.StartThinking {
-        ~String describe()
-      }
-      class "StopThinking" as ru.jlexender.se.labstory.classesList.Action.StopThinking {
-        ~String describe()
-      }
-      class "Tell" as ru.jlexender.se.labstory.classesList.Action.Tell {
-        ~String describe()
-      }
-    }
-    package "Item" {
-      class "Buns" as ru.jlexender.se.labstory.classesList.Item.Buns {
-      }
-      class "Glass" as ru.jlexender.se.labstory.classesList.Item.Glass {
-      }
-    }
-    package "Liquid" {
-      class "Juice" as ru.jlexender.se.labstory.classesList.Liquid.Juice {
-      }
-    }
-    package "Place" {
-      class "BabyHome" as ru.jlexender.se.labstory.classesList.Place.BabyHome {
-      }
-      class "FilleHome" as ru.jlexender.se.labstory.classesList.Place.FilleHome {
-      }
-      class "Porch" as ru.jlexender.se.labstory.classesList.Place.Porch {
-      }
-      class "RulleHome" as ru.jlexender.se.labstory.classesList.Place.RulleHome {
-      }
-    }
-  }
-  package "enums" {
-    enum "Color" as ru.jlexender.se.labstory.enums.Color {
-      NONE
-      RED
-      BLUE
-      LIGHTBLUE
-      GREEN
-      YELLOW
-      ORANGE
-      PINK
-      WHITE
-      BLACK
-      __
-      + {static}Color[] values()
-      + {static}Color valueOf(String)
-      +String getValue()
-    }
-    enum "Mood" as ru.jlexender.se.labstory.enums.Mood {
-      NORMAL
-      HAPPY
-      ANGRY
-      SAD
-      WORRIED
-      __
-      + {static}Mood[] values()
-      + {static}Mood valueOf(String)
-      +String getValue()
-    }
-  }
-  package "interfaces" {
-    interface "IDrinkingItem" as ru.jlexender.se.labstory.interfaces.IDrinkingItem {
-    }
-    interface "IFood" as ru.jlexender.se.labstory.interfaces.IFood {
-    }
-    interface "IRollable" as ru.jlexender.se.labstory.interfaces.IRollable {
-    }
-    interface "ISeat" as ru.jlexender.se.labstory.interfaces.ISeat {
-    }
-  }
-  package "utilityClasses" {
-    class "Printer" as ru.jlexender.se.labstory.utilityClasses.Printer {
-      +void print()
-    }
-  }
+class "App" as ru.jlexender.se.labstory.App {
+  + {static}void main(String[])
+}
+class "Book" as ru.jlexender.se.labstory.Book {
+  #Human karlsson
+  #Human baby
+  #Human rulle
+  #Human fille
+  #Human frokenBock
+  #Human uncleJulius
+  #Porch porch
+  #Place rulleHome
+  #Place filleHome
+  #Place babyHome
+  #Glass glass
+  #Juice juice
+  #Buns buns
+  __
+  +void go()
+}
+abstract class "Action" as ru.jlexender.se.labstory.basicClasses.Action {
+  -String description
+  -Mood mood
+  -boolean moodChanging
+  __
+  ~void applyChanges(Human)
+  ~String describe()
+}
+class "Human" as ru.jlexender.se.labstory.basicClasses.Human {
+  -String name
+  -Mood mood
+  __
+  +String getName()
+  +Mood getMood()
+  ~void setMood(Mood)
+  +void doAction(Action)
+}
+abstract class "Item" as ru.jlexender.se.labstory.basicClasses.Item {
+  -String name
+  __
+  +String getName()
+}
+abstract class "Liquid" as ru.jlexender.se.labstory.basicClasses.Liquid {
+  -String name
+  __
+  +String getName()
+}
+abstract class "Place" as ru.jlexender.se.labstory.basicClasses.Place {
+  -String name
+  __
+  +String getName()
+}
+class "Time" as ru.jlexender.se.labstory.basicClasses.Time {
+  -int months
+  -int years
+  __
+  +int getMonths()
+  +int getYears()
+}
+class "DoNotListen" as ru.jlexender.se.labstory.classesList.Action.DoNotListen {
+  -Human human
+  -boolean ignoringAll
+  __
+  ~String describe()
+}
+class "DrinkFromItem" as ru.jlexender.se.labstory.classesList.Action.DrinkFromItem {
+  -IDrinkingItem item
+  __
+  ~String describe()
+}
+class "EatItem" as ru.jlexender.se.labstory.classesList.Action.EatItem {
+  -IFood item
+  __
+  ~String describe()
+}
+class "ForgotToTell" as ru.jlexender.se.labstory.classesList.Action.ForgotToTell {
+  -Human human
+  __
+  ~String describe()
+}
+class "GiftItem" as ru.jlexender.se.labstory.classesList.Action.GiftItem {
+  -Item item
+  -Human human
+  -Time time
+  #boolean timeAgo
+  __
+  ~String describe()
+}
+class "GoingTo" as ru.jlexender.se.labstory.classesList.Action.GoingTo {
+  -Place place
+  __
+  ~String describe()
+}
+class "HoldItem" as ru.jlexender.se.labstory.classesList.Action.HoldItem {
+  -Item item
+  __
+  ~String describe()
+}
+class "Lives" as ru.jlexender.se.labstory.classesList.Action.Lives {
+  -Place place
+  __
+  ~String describe()
+}
+class "PourDrinkingItem" as ru.jlexender.se.labstory.classesList.Action.PourDrinkingItem {
+  -IDrinkingItem item
+  -Liquid liquid
+  __
+  ~String describe()
+}
+class "RollItem" as ru.jlexender.se.labstory.classesList.Action.RollItem {
+  -IRollable item
+  __
+  ~String describe()
+}
+class "Sit" as ru.jlexender.se.labstory.classesList.Action.Sit {
+  -ISeat place
+  __
+  ~String describe()
+}
+class "StartThinking" as ru.jlexender.se.labstory.classesList.Action.StartThinking {
+  ~String describe()
+}
+class "StopThinking" as ru.jlexender.se.labstory.classesList.Action.StopThinking {
+  ~String describe()
+}
+class "Tell" as ru.jlexender.se.labstory.classesList.Action.Tell {
+  -Human human
+  __
+  ~String describe()
+}
+class "Buns" as ru.jlexender.se.labstory.classesList.Item.Buns {
+  -String name
+}
+class "Glass" as ru.jlexender.se.labstory.classesList.Item.Glass {
+  -String name
+}
+class "Juice" as ru.jlexender.se.labstory.classesList.Liquid.Juice {
+}
+class "BabyHome" as ru.jlexender.se.labstory.classesList.Place.BabyHome {
+}
+class "FilleHome" as ru.jlexender.se.labstory.classesList.Place.FilleHome {
+}
+class "Porch" as ru.jlexender.se.labstory.classesList.Place.Porch {
+}
+class "RulleHome" as ru.jlexender.se.labstory.classesList.Place.RulleHome {
+}
+enum "Color" as ru.jlexender.se.labstory.enums.Color {
+  NONE
+  RED
+  BLUE
+  LIGHTBLUE
+  GREEN
+  YELLOW
+  ORANGE
+  PINK
+  WHITE
+  BLACK
+  ..
+  -String value
+  __
+  + {static}Color[] values()
+  + {static}Color valueOf(String)
+  +String getValue()
+}
+enum "Mood" as ru.jlexender.se.labstory.enums.Mood {
+  NORMAL
+  HAPPY
+  ANGRY
+  SAD
+  WORRIED
+  ..
+  -String value
+  __
+  + {static}Mood[] values()
+  + {static}Mood valueOf(String)
+  +String getValue()
+}
+interface "IDrinkingItem" as ru.jlexender.se.labstory.interfaces.IDrinkingItem {
+}
+interface "IFood" as ru.jlexender.se.labstory.interfaces.IFood {
+}
+interface "IRollable" as ru.jlexender.se.labstory.interfaces.IRollable {
+}
+interface "ISeat" as ru.jlexender.se.labstory.interfaces.ISeat {
+}
+class "Printer" as ru.jlexender.se.labstory.utilityClasses.Printer {
+  -String printString
+  __
+  +void print()
 }
 ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.classesList.Place.Porch
 ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.basicClasses.Human

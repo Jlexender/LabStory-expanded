@@ -61,7 +61,9 @@ classDiagrams {
     include packages().withName("ru.jlexender.se.labstory")
 	include superclasses()	
 	include methods()
+    include fields()
     writeTo file('xyz.puml')
+    hidePackages()
   }
 }
 
