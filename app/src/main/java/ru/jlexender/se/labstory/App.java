@@ -12,17 +12,7 @@ import ru.jlexender.se.labstory.enums.*;
 
 public class App {
     public static void main(String[] args) {
-
         Book story = new Book();
         story.go();
-
-        Human dvk = new Human("Дмитрий Карпов");
-        Place FH = new FilleHome();
-
-        System.out.println(dvk);
-        System.out.println(FH);
-        System.out.println(dvk.hashCode());
-        System.out.println(FH.hashCode());
-        
     }
 }
