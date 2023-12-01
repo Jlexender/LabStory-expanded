@@ -35,8 +35,8 @@ public class Human {
     }
     
     @Override
-    public boolean equals(Object human) {
-        return this == human;
+    public boolean equals(Object object) {
+        return this.toString() == object.toString();
     }
     
     @Override
@@ -46,7 +46,7 @@ public class Human {
                + ", mood=" + mood
                + '}';
     } 
-    
+
     @Override 
     public int hashCode() {
         return this.toString().hashCode();

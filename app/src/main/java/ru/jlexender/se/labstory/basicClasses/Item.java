@@ -13,7 +13,7 @@ public abstract class Item {
 
     @Override
     public boolean equals(Object object) {
-        return this == object;
+        return this.toString() == object.toString();
     }
     
     @Override

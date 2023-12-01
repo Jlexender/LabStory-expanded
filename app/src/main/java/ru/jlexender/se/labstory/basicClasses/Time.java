@@ -18,7 +18,7 @@ public class Time {
 
     @Override
     public boolean equals(Object object) {
-        return this == object;
+        return this.toString() == object.toString();
     }
     
     @Override
