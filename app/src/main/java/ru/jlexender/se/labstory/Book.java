@@ -4,7 +4,6 @@ import ru.jlexender.se.labstory.basicClasses.*;
 import ru.jlexender.se.labstory.classesList.Place.*;
 import ru.jlexender.se.labstory.classesList.Action.*;
 import ru.jlexender.se.labstory.classesList.Item.*;
-import ru.jlexender.se.labstory.classesList.Liquid.*;
 import ru.jlexender.se.labstory.interfaces.*;
 import ru.jlexender.se.labstory.enums.*;
 

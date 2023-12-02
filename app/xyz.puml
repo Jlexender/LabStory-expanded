@@ -54,14 +54,6 @@ abstract class "Item" as ru.jlexender.se.labstory.basicClasses.Item {
   +String toString()
   +int hashCode()
 }
-abstract class "Liquid" as ru.jlexender.se.labstory.basicClasses.Liquid {
-  -String name
-  __
-  +String getName()
-  +boolean equals(Object)
-  +String toString()
-  +int hashCode()
-}
 abstract class "Place" as ru.jlexender.se.labstory.basicClasses.Place {
   -String name
   -Weather weather
@@ -128,7 +120,7 @@ class "Lives" as ru.jlexender.se.labstory.classesList.Action.Lives {
 }
 class "PourDrinkingItem" as ru.jlexender.se.labstory.classesList.Action.PourDrinkingItem {
   -IDrinkingItem item
-  -Liquid liquid
+  -Item liquid
   __
   ~String describe()
 }
@@ -159,7 +151,7 @@ class "Buns" as ru.jlexender.se.labstory.classesList.Item.Buns {
 class "Glass" as ru.jlexender.se.labstory.classesList.Item.Glass {
   -String name
 }
-class "Juice" as ru.jlexender.se.labstory.classesList.Liquid.Juice {
+class "Juice" as ru.jlexender.se.labstory.classesList.Item.Juice {
 }
 class "BabyHome" as ru.jlexender.se.labstory.classesList.Place.BabyHome {
 }
@@ -228,8 +220,8 @@ ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.classesList.Place.Por
 ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.basicClasses.Human
 ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.basicClasses.Place
 ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.classesList.Item.Buns
+ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.classesList.Item.Juice
 ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.classesList.Item.Glass
-ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.classesList.Liquid.Juice
 ru.jlexender.se.labstory.basicClasses.Action --> ru.jlexender.se.labstory.enums.Mood
 ru.jlexender.se.labstory.basicClasses.Human --> ru.jlexender.se.labstory.enums.Mood
 ru.jlexender.se.labstory.basicClasses.Place --> ru.jlexender.se.labstory.enums.Weather
@@ -253,7 +245,7 @@ ru.jlexender.se.labstory.classesList.Action.Lives -u-|> ru.jlexender.se.labstory
 ru.jlexender.se.labstory.classesList.Action.Lives --> ru.jlexender.se.labstory.basicClasses.Place
 ru.jlexender.se.labstory.classesList.Action.PourDrinkingItem -u-|> ru.jlexender.se.labstory.basicClasses.Action
 ru.jlexender.se.labstory.classesList.Action.PourDrinkingItem --> ru.jlexender.se.labstory.interfaces.IDrinkingItem
-ru.jlexender.se.labstory.classesList.Action.PourDrinkingItem --> ru.jlexender.se.labstory.basicClasses.Liquid
+ru.jlexender.se.labstory.classesList.Action.PourDrinkingItem --> ru.jlexender.se.labstory.basicClasses.Item
 ru.jlexender.se.labstory.classesList.Action.RollItem -u-|> ru.jlexender.se.labstory.basicClasses.Action
 ru.jlexender.se.labstory.classesList.Action.RollItem --> ru.jlexender.se.labstory.interfaces.IRollable
 ru.jlexender.se.labstory.classesList.Action.Sit -u-|> ru.jlexender.se.labstory.basicClasses.Action
@@ -268,7 +260,7 @@ ru.jlexender.se.labstory.classesList.Item.Buns .u.|> ru.jlexender.se.labstory.in
 ru.jlexender.se.labstory.classesList.Item.Glass -u-|> ru.jlexender.se.labstory.basicClasses.Item
 ru.jlexender.se.labstory.classesList.Item.Glass .u.|> ru.jlexender.se.labstory.interfaces.IRollable
 ru.jlexender.se.labstory.classesList.Item.Glass .u.|> ru.jlexender.se.labstory.interfaces.IDrinkingItem
-ru.jlexender.se.labstory.classesList.Liquid.Juice -u-|> ru.jlexender.se.labstory.basicClasses.Liquid
+ru.jlexender.se.labstory.classesList.Item.Juice -u-|> ru.jlexender.se.labstory.basicClasses.Item
 ru.jlexender.se.labstory.classesList.Place.BabyHome -u-|> ru.jlexender.se.labstory.basicClasses.Place
 ru.jlexender.se.labstory.classesList.Place.FilleHome -u-|> ru.jlexender.se.labstory.basicClasses.Place
 ru.jlexender.se.labstory.classesList.Place.Porch -u-|> ru.jlexender.se.labstory.basicClasses.Place
