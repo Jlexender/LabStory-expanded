@@ -7,12 +7,12 @@ public abstract class Action {
     private Mood mood;
     private boolean moodChanging;
     
-    protected Action(String description) {
+    default Action(String description) {
         this.description = description;
         moodChanging = false;
     }
 
-    protected Action(String description, Mood mood) {
+    default Action(String description, Mood mood) {
         this.description = description;
         this.mood = mood;
         moodChanging = true;
