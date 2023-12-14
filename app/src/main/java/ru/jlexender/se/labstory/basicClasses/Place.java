@@ -1,18 +1,34 @@
 package ru.jlexender.se.labstory.basicClasses;
 
-import ru.jlexender.se.labstory.enums.Weather;
-
 public abstract class Place {
     private final String name;
-    private Weather weather;
-
+    
+    private Weather weather = Weather.CLOUDY;
+    
+    public static enum Weather { 
+        CLOUDY("cloudy"),
+        SUNNY("sunny"),
+        SNOWY("snowy"),
+        RAINY("rainy"),
+        THUNDER("thunder");
+        
+        private String value;
+        
+        private Weather(String value) {
+            this.value = value;
+        }
+        
+        public String getValue() {
+            return value;            
+        }
+    } 
+    
     public Place(String name) {
-        this.name = name;
-        this.weather = Weather.CLOUDY;
+        this(name, Weather.CLOUDY);
     }
 
     public Place(String name, Weather weather) {
-        this(name);
+        this.name = name;
         this.weather = weather;
     }
 

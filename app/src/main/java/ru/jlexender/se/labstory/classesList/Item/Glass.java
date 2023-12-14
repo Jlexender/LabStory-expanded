@@ -9,11 +9,11 @@ public class Glass extends Item implements IRollable, IDrinkingItem {
     private String name;
     
     public Glass(Color color) {
-        super(color.getValue() + " glass");
+        super(color.getValue() + " glass", 15, false);
     }
 
     public Glass() {
-        super("glass");
+        super("glass", 15, false);
     }
 
 }

@@ -8,7 +8,7 @@ public class Buns extends Item implements IFood, IRollable {
     private String name;
 
     public Buns() {
-        super("buns");
+        super("buns", 10, false);
     }
 
 }

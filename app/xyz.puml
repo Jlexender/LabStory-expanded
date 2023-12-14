@@ -23,16 +23,46 @@ class "Book" as ru.jlexender.se.labstory.Book {
   __
   +void go()
 }
-abstract class "Action" as ru.jlexender.se.labstory.basicClasses.Action {
-  -String description
-  -Mood mood
-  -boolean moodChanging
-  __
-  ~void applyChanges(Human)
-  ~String describe()
-  +boolean equals(Object)
-  +String toString()
-  +int hashCode()
+interface "IDoNotListen" as ru.jlexender.se.labstory.actionInterfaces.IDoNotListen {
+  + {abstract}void doNotListen(Human)
+  + {abstract}void doNotListen()
+}
+interface "IDrinkFromItem" as ru.jlexender.se.labstory.actionInterfaces.IDrinkFromItem {
+  + {abstract}void drinkFromItem(IDrinkingItem)
+}
+interface "IEat" as ru.jlexender.se.labstory.actionInterfaces.IEat {
+  + {abstract}void eat(IFood)
+}
+interface "IForgetToTell" as ru.jlexender.se.labstory.actionInterfaces.IForgetToTell {
+  + {abstract}void forgetToTell(Human)
+}
+interface "IGoingTo" as ru.jlexender.se.labstory.actionInterfaces.IGoingTo {
+  + {abstract}void isGoingTo(Place)
+}
+interface "IHold" as ru.jlexender.se.labstory.actionInterfaces.IHold {
+  + {abstract}void hold(Item)
+}
+interface "ILive" as ru.jlexender.se.labstory.actionInterfaces.ILive {
+  + {abstract}void live(Place)
+}
+interface "IPour" as ru.jlexender.se.labstory.actionInterfaces.IPour {
+  + {abstract}void pour(IDrinkingItem, Item)
+}
+interface "IRollItem" as ru.jlexender.se.labstory.actionInterfaces.IRollItem {
+  + {abstract}void rollItem(Item)
+}
+interface "ISit" as ru.jlexender.se.labstory.actionInterfaces.ISit {
+  + {abstract}void sit(Place)
+  + {abstract}void sit()
+}
+interface "IStartThinking" as ru.jlexender.se.labstory.actionInterfaces.IStartThinking {
+  + {abstract}void startThinking()
+}
+interface "IStopThinking" as ru.jlexender.se.labstory.actionInterfaces.IStopThinking {
+  + {abstract}void stopThinking()
+}
+interface "ITell" as ru.jlexender.se.labstory.actionInterfaces.ITell {
+  + {abstract}void tell(Human)
 }
 class "Human" as ru.jlexender.se.labstory.basicClasses.Human {
   -String name
@@ -41,7 +71,21 @@ class "Human" as ru.jlexender.se.labstory.basicClasses.Human {
   +String getName()
   +Mood getMood()
   ~void setMood(Mood)
-  +void doAction(Action)
+  +void doNotListen()
+  +void doNotListen(Human)
+  +void drinkFromItem(IDrinkingItem)
+  +void eat(IFood)
+  +void forgetToTell(Human)
+  +void isGoingTo(Place)
+  +void hold(Item)
+  +void live(Place)
+  +void pour(IDrinkingItem, Item)
+  +void rollItem(Item)
+  +void sit()
+  +void sit(Place)
+  +void startThinking()
+  +void stopThinking()
+  +void tell(Human)
   +boolean equals(Object)
   +String toString()
   +int hashCode()
@@ -73,77 +117,6 @@ class "Time" as ru.jlexender.se.labstory.basicClasses.Time {
   +boolean equals(Object)
   +String toString()
   +int hashCode()
-}
-class "DoNotListen" as ru.jlexender.se.labstory.classesList.Action.DoNotListen {
-  -Human human
-  -boolean ignoringAll
-  __
-  ~String describe()
-}
-class "DrinkFromItem" as ru.jlexender.se.labstory.classesList.Action.DrinkFromItem {
-  -IDrinkingItem item
-  __
-  ~String describe()
-}
-class "EatItem" as ru.jlexender.se.labstory.classesList.Action.EatItem {
-  -IFood item
-  __
-  ~String describe()
-}
-class "ForgotToTell" as ru.jlexender.se.labstory.classesList.Action.ForgotToTell {
-  -Human human
-  __
-  ~String describe()
-}
-class "GiftItem" as ru.jlexender.se.labstory.classesList.Action.GiftItem {
-  -Item item
-  -Human human
-  -Time time
-  #boolean timeAgo
-  __
-  ~String describe()
-}
-class "GoingTo" as ru.jlexender.se.labstory.classesList.Action.GoingTo {
-  -Place place
-  __
-  ~String describe()
-}
-class "HoldItem" as ru.jlexender.se.labstory.classesList.Action.HoldItem {
-  -Item item
-  __
-  ~String describe()
-}
-class "Lives" as ru.jlexender.se.labstory.classesList.Action.Lives {
-  -Place place
-  __
-  ~String describe()
-}
-class "PourDrinkingItem" as ru.jlexender.se.labstory.classesList.Action.PourDrinkingItem {
-  -IDrinkingItem item
-  -Item liquid
-  __
-  ~String describe()
-}
-class "RollItem" as ru.jlexender.se.labstory.classesList.Action.RollItem {
-  -IRollable item
-  __
-  ~String describe()
-}
-class "Sit" as ru.jlexender.se.labstory.classesList.Action.Sit {
-  -ISeat place
-  __
-  ~String describe()
-}
-class "StartThinking" as ru.jlexender.se.labstory.classesList.Action.StartThinking {
-  ~String describe()
-}
-class "StopThinking" as ru.jlexender.se.labstory.classesList.Action.StopThinking {
-  ~String describe()
-}
-class "Tell" as ru.jlexender.se.labstory.classesList.Action.Tell {
-  -Human human
-  __
-  ~String describe()
 }
 class "Buns" as ru.jlexender.se.labstory.classesList.Item.Buns {
   -String name
@@ -222,38 +195,21 @@ ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.basicClasses.Place
 ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.classesList.Item.Buns
 ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.classesList.Item.Juice
 ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.classesList.Item.Glass
-ru.jlexender.se.labstory.basicClasses.Action --> ru.jlexender.se.labstory.enums.Mood
+ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IDoNotListen
+ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IDrinkFromItem
+ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IEat
+ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IForgetToTell
+ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IGoingTo
+ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IHold
+ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.ILive
+ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IPour
+ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IRollItem
+ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.ISit
+ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IStartThinking
+ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IStopThinking
+ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.ITell
 ru.jlexender.se.labstory.basicClasses.Human --> ru.jlexender.se.labstory.enums.Mood
 ru.jlexender.se.labstory.basicClasses.Place --> ru.jlexender.se.labstory.enums.Weather
-ru.jlexender.se.labstory.classesList.Action.DoNotListen -u-|> ru.jlexender.se.labstory.basicClasses.Action
-ru.jlexender.se.labstory.classesList.Action.DoNotListen --> ru.jlexender.se.labstory.basicClasses.Human
-ru.jlexender.se.labstory.classesList.Action.DrinkFromItem -u-|> ru.jlexender.se.labstory.basicClasses.Action
-ru.jlexender.se.labstory.classesList.Action.DrinkFromItem --> ru.jlexender.se.labstory.interfaces.IDrinkingItem
-ru.jlexender.se.labstory.classesList.Action.EatItem -u-|> ru.jlexender.se.labstory.basicClasses.Action
-ru.jlexender.se.labstory.classesList.Action.EatItem --> ru.jlexender.se.labstory.interfaces.IFood
-ru.jlexender.se.labstory.classesList.Action.ForgotToTell -u-|> ru.jlexender.se.labstory.basicClasses.Action
-ru.jlexender.se.labstory.classesList.Action.ForgotToTell --> ru.jlexender.se.labstory.basicClasses.Human
-ru.jlexender.se.labstory.classesList.Action.GiftItem -u-|> ru.jlexender.se.labstory.basicClasses.Action
-ru.jlexender.se.labstory.classesList.Action.GiftItem --> ru.jlexender.se.labstory.basicClasses.Time
-ru.jlexender.se.labstory.classesList.Action.GiftItem --> ru.jlexender.se.labstory.basicClasses.Human
-ru.jlexender.se.labstory.classesList.Action.GiftItem --> ru.jlexender.se.labstory.basicClasses.Item
-ru.jlexender.se.labstory.classesList.Action.GoingTo -u-|> ru.jlexender.se.labstory.basicClasses.Action
-ru.jlexender.se.labstory.classesList.Action.GoingTo --> ru.jlexender.se.labstory.basicClasses.Place
-ru.jlexender.se.labstory.classesList.Action.HoldItem -u-|> ru.jlexender.se.labstory.basicClasses.Action
-ru.jlexender.se.labstory.classesList.Action.HoldItem --> ru.jlexender.se.labstory.basicClasses.Item
-ru.jlexender.se.labstory.classesList.Action.Lives -u-|> ru.jlexender.se.labstory.basicClasses.Action
-ru.jlexender.se.labstory.classesList.Action.Lives --> ru.jlexender.se.labstory.basicClasses.Place
-ru.jlexender.se.labstory.classesList.Action.PourDrinkingItem -u-|> ru.jlexender.se.labstory.basicClasses.Action
-ru.jlexender.se.labstory.classesList.Action.PourDrinkingItem --> ru.jlexender.se.labstory.interfaces.IDrinkingItem
-ru.jlexender.se.labstory.classesList.Action.PourDrinkingItem --> ru.jlexender.se.labstory.basicClasses.Item
-ru.jlexender.se.labstory.classesList.Action.RollItem -u-|> ru.jlexender.se.labstory.basicClasses.Action
-ru.jlexender.se.labstory.classesList.Action.RollItem --> ru.jlexender.se.labstory.interfaces.IRollable
-ru.jlexender.se.labstory.classesList.Action.Sit -u-|> ru.jlexender.se.labstory.basicClasses.Action
-ru.jlexender.se.labstory.classesList.Action.Sit --> ru.jlexender.se.labstory.interfaces.ISeat
-ru.jlexender.se.labstory.classesList.Action.StartThinking -u-|> ru.jlexender.se.labstory.basicClasses.Action
-ru.jlexender.se.labstory.classesList.Action.StopThinking -u-|> ru.jlexender.se.labstory.basicClasses.Action
-ru.jlexender.se.labstory.classesList.Action.Tell -u-|> ru.jlexender.se.labstory.basicClasses.Action
-ru.jlexender.se.labstory.classesList.Action.Tell --> ru.jlexender.se.labstory.basicClasses.Human
 ru.jlexender.se.labstory.classesList.Item.Buns -u-|> ru.jlexender.se.labstory.basicClasses.Item
 ru.jlexender.se.labstory.classesList.Item.Buns .u.|> ru.jlexender.se.labstory.interfaces.IFood
 ru.jlexender.se.labstory.classesList.Item.Buns .u.|> ru.jlexender.se.labstory.interfaces.IRollable

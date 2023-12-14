@@ -4,4 +4,5 @@ import ru.jlexender.se.labstory.basicClasses.Human;
 
 public interface ITell {
     public void tell(Human human);
+    public void tell(Human human, String phrase);
 }
