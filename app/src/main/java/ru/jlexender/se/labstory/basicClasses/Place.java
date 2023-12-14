@@ -2,8 +2,7 @@ package ru.jlexender.se.labstory.basicClasses;
 
 public abstract class Place {
     private final String name;
-    
-    private Weather weather = Weather.CLOUDY;
+    private Weather weather;
     
     public static enum Weather { 
         CLOUDY("cloudy"),

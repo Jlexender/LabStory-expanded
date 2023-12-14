@@ -2,7 +2,7 @@ package ru.jlexender.se.labstory.exceptions;
 
 import ru.jlexender.se.labstory.basicClasses.Item;
 
-public class ItemIsNotPourableException extends Exception {
+public class ItemIsNotPourableException extends RuntimeException {
     private Item subject;
 
     public ItemIsNotPourableException(String message, Item subject) {
