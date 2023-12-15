@@ -2,10 +2,10 @@ package ru.jlexender.se.labstory.exceptions;
 
 import ru.jlexender.se.labstory.basicClasses.Human;
 
-public class UnknownHumanLocationException extends RuntimeException {
+public class WrongHumanLimbException extends Exception {
     Human subject;
 
-    public UnknownHumanLocationException(String message, Human subject) {
+    public WrongHumanLimbException(String message, Human subject) {
         super(message);
         this.subject = subject;
     }

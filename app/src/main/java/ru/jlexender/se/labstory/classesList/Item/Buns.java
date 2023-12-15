@@ -4,7 +4,7 @@ import ru.jlexender.se.labstory.basicClasses.Item;
 import ru.jlexender.se.labstory.interfaces.IFood;
 import ru.jlexender.se.labstory.interfaces.IRollable;
 
-public class Buns extends Item implements IFood, IRollable {
+public class Buns extends Item implements IFood {
     private String name;
 
     public Buns() {

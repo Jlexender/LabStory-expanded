@@ -10,11 +10,12 @@ import ru.jlexender.se.labstory.actionInterfaces.*;
 import ru.jlexender.se.labstory.interfaces.*;
 import ru.jlexender.se.labstory.utilityInterfaces.*;
 import ru.jlexender.se.labstory.enums.*;
+import ru.jlexender.se.labstory.exceptions.*;
 
 public class App {
     public static void main(String[] args) {
         IExecute story = new IExecute() {
-            Human karlsson = new Human("Karlsson");
+            Human karlsson = new Human("Karlsson", Mood.HAPPY);
             Human baby = new Human("Baby");
             Human rulle = new Human("Rulle");
             Human fille = new Human("Fille");
@@ -26,47 +27,47 @@ public class App {
             Place filleHome = new FilleHome();
             Place babyHome = new BabyHome();
             Place porchPlace = new PorchPlace();
-
+            
             Glass glass = new Glass(Color.LIGHTBLUE);
             Juice juice = new Juice();
             Buns buns = new Buns();
             KarlssonsBoots karlssonsBoots = new KarlssonsBoots();
 
             public void execute() {
-                rulle.jumpUp();
-                fille.jumpUp();
-                fille.wantToSay("Рулле, нас нет");
-                fille.tell(rulle, "Нулле, рас нет");
-                karlsson.returnBackTo(porchPlace);
-                baby.returnBackTo(porchPlace);
-                karlsson.sit(porch);
-                baby.sit(porch);
-                baby.startThinking();
-                rulle.live(rulleHome);
-                fille.live(filleHome);
-                frokenBock.isGoingTo(babyHome);
-                uncleJulius.isGoingTo(babyHome);
-                baby.stopThinking();
-                baby.forgetToTell(karlsson);
-                baby.tell(karlsson);
-                karlsson.doNotListen(baby);
-                karlsson.eat(buns);
-                karlsson.pour(glass, juice);
-                karlsson.drinkFromItem(glass);
-                karlsson.hold(glass);
-                karlsson.takeItemOff(karlssonsBoots);
-                karlsson.rollItem(glass);
-                karlsson.holdWithToes(glass);
-                karlsson.holdWithToes(glass);
-                karlsson.interrupt();
-
                 try {
-                    frokenBock.getLocation();
-                    } catch(Exception e){
-                        e.printStackTrace();
-                    }
-                }
-            };
+                    rulle.jumpUp();
+                    fille.jumpUp();
+                    fille.wantToSay("Рулле, нас нет");
+                    fille.tell(rulle, "Нулле, рас нет");
+                    karlsson.returnBackTo(porchPlace);
+                    baby.returnBackTo(porchPlace);
+                    karlsson.sit(porch);
+                    baby.sit(porch);
+                    baby.think("Rulle lives nearby");
+                    baby.think("Fille lives nearby");
+                    baby.think("Froken Bock is going to my home today");
+                    baby.think("Uncle Julius is going to my home today");
+                    baby.forgetToTell(karlsson);
+                    baby.changeMood(Mood.WORRIED);
+                    baby.tell(karlsson);
+                    karlsson.doNotListen(baby);
+                    karlsson.eat(buns);
+                    karlsson.pour(glass, juice);
+                    karlsson.drinkFromItem(glass);
+                    karlsson.hold(glass);
+                    karlsson.takeItemOff(karlssonsBoots);
+                    karlsson.holdWithLimb(glass, karlsson.rightToes, karlsson.leftToes);
+                    karlsson.rollItem(glass);
+                    karlsson.interrupt();
+                } catch(UnknownHumanLocationException e){
+                    e.printStackTrace();
+                } catch(ItemTooLargeException e) {
+                    e.printStackTrace();
+                } catch(WrongHumanLimbException e) {
+                    e.printStackTrace();
+                } 
+            }
+        };
         story.execute();
     }
 }
