@@ -3,10 +3,16 @@
 
 class "Enum" as java.lang.Enum {
 }
+class "Exception" as java.lang.Exception {
+}
+class "Record" as java.lang.Record {
+}
+class "RuntimeException" as java.lang.RuntimeException {
+}
 class "App" as ru.jlexender.se.labstory.App {
   + {static}void main(String[])
 }
-class "Book" as ru.jlexender.se.labstory.Book {
+class "App$1" as ru.jlexender.se.labstory.App$1 {
   #Human karlsson
   #Human baby
   #Human rulle
@@ -17,11 +23,13 @@ class "Book" as ru.jlexender.se.labstory.Book {
   #Place rulleHome
   #Place filleHome
   #Place babyHome
+  #Place porchPlace
   #Glass glass
   #Juice juice
   #Buns buns
+  #KarlssonsBoots karlssonsBoots
   __
-  +void go()
+  +void execute()
 }
 interface "IDoNotListen" as ru.jlexender.se.labstory.actionInterfaces.IDoNotListen {
   + {abstract}void doNotListen(Human)
@@ -42,11 +50,24 @@ interface "IGoingTo" as ru.jlexender.se.labstory.actionInterfaces.IGoingTo {
 interface "IHold" as ru.jlexender.se.labstory.actionInterfaces.IHold {
   + {abstract}void hold(Item)
 }
+interface "IHoldWithLimb" as ru.jlexender.se.labstory.actionInterfaces.IHoldWithLimb {
+  + {abstract}void holdWithLimb(Item, Limb[])
+}
+interface "IInterrupt" as ru.jlexender.se.labstory.actionInterfaces.IInterrupt {
+  + {abstract}void interrupt(Human)
+  + {abstract}void interrupt()
+}
+interface "IJumpUp" as ru.jlexender.se.labstory.actionInterfaces.IJumpUp {
+  + {abstract}void jumpUp()
+}
 interface "ILive" as ru.jlexender.se.labstory.actionInterfaces.ILive {
   + {abstract}void live(Place)
 }
 interface "IPour" as ru.jlexender.se.labstory.actionInterfaces.IPour {
   + {abstract}void pour(IDrinkingItem, Item)
+}
+interface "IReturnBackTo" as ru.jlexender.se.labstory.actionInterfaces.IReturnBackTo {
+  + {abstract}void returnBackTo(Place)
 }
 interface "IRollItem" as ru.jlexender.se.labstory.actionInterfaces.IRollItem {
   + {abstract}void rollItem(Item)
@@ -55,22 +76,38 @@ interface "ISit" as ru.jlexender.se.labstory.actionInterfaces.ISit {
   + {abstract}void sit(Place)
   + {abstract}void sit()
 }
-interface "IStartThinking" as ru.jlexender.se.labstory.actionInterfaces.IStartThinking {
-  + {abstract}void startThinking()
-}
-interface "IStopThinking" as ru.jlexender.se.labstory.actionInterfaces.IStopThinking {
-  + {abstract}void stopThinking()
-}
 interface "ITell" as ru.jlexender.se.labstory.actionInterfaces.ITell {
   + {abstract}void tell(Human)
+  + {abstract}void tell(Human, String)
+}
+interface "IThink" as ru.jlexender.se.labstory.actionInterfaces.IThink {
+  + {abstract}void think(String)
+}
+interface "IWantToSay" as ru.jlexender.se.labstory.actionInterfaces.IWantToSay {
+  + {abstract}void wantToSay(String)
+}
+interface "IWear" as ru.jlexender.se.labstory.actionInterfaces.IWear {
+  + {abstract}void takeItemOn(IWearable)
+  + {abstract}void takeItemOff(IWearable)
 }
 class "Human" as ru.jlexender.se.labstory.basicClasses.Human {
   -String name
   -Mood mood
+  -Place location
+  +Limb leftArm
+  +Limb rightArm
+  +Limb leftLeg
+  +Limb rightLeg
+  +Limb rightFingers
+  +Limb leftFingers
+  +Limb rightToes
+  +Limb leftToes
   __
   +String getName()
   +Mood getMood()
-  ~void setMood(Mood)
+  +void changeMood(Mood)
+  +Place getLocation()
+  ~void setLocation(Place)
   +void doNotListen()
   +void doNotListen(Human)
   +void drinkFromItem(IDrinkingItem)
@@ -83,17 +120,45 @@ class "Human" as ru.jlexender.se.labstory.basicClasses.Human {
   +void rollItem(Item)
   +void sit()
   +void sit(Place)
-  +void startThinking()
-  +void stopThinking()
+  +void think(String)
   +void tell(Human)
+  +void tell(Human, String)
+  +void holdWithLimb(Item, Limb[])
+  +void wantToSay(String)
+  +void jumpUp()
+  +void returnBackTo(Place)
+  +void takeItemOn(IWearable)
+  +void takeItemOff(IWearable)
+  +void interrupt(Human)
+  +void interrupt()
   +boolean equals(Object)
   +String toString()
   +int hashCode()
 }
-abstract class "Item" as ru.jlexender.se.labstory.basicClasses.Item {
+class "Human$1Thought" as ru.jlexender.se.labstory.basicClasses.Human$1Thought {
+  -String content
+  __
+  +String getContent()
+  +String toString()
+  +int hashCode()
+  +boolean equals(Object)
+  +String content()
+}
+class "Human$Limb" as ru.jlexender.se.labstory.basicClasses.Human$Limb {
   -String name
+  -Human owner
   __
   +String getName()
+  -Human getOwner()
+}
+abstract class "Item" as ru.jlexender.se.labstory.basicClasses.Item {
+  -String name
+  -int size
+  -boolean liquid
+  __
+  +String getName()
+  +boolean isLiquid()
+  +int getSize()
   +boolean equals(Object)
   +String toString()
   +int hashCode()
@@ -107,6 +172,19 @@ abstract class "Place" as ru.jlexender.se.labstory.basicClasses.Place {
   +boolean equals(Object)
   +String toString()
   +int hashCode()
+}
+enum "Place$Weather" as ru.jlexender.se.labstory.basicClasses.Place$Weather {
+  CLOUDY
+  SUNNY
+  SNOWY
+  RAINY
+  THUNDER
+  ..
+  -String value
+  __
+  + {static}Weather[] values()
+  + {static}Weather valueOf(String)
+  +String getValue()
 }
 class "Time" as ru.jlexender.se.labstory.basicClasses.Time {
   -int months
@@ -126,11 +204,16 @@ class "Glass" as ru.jlexender.se.labstory.classesList.Item.Glass {
 }
 class "Juice" as ru.jlexender.se.labstory.classesList.Item.Juice {
 }
+class "KarlssonsBoots" as ru.jlexender.se.labstory.classesList.Item.KarlssonsBoots {
+  -String name
+}
 class "BabyHome" as ru.jlexender.se.labstory.classesList.Place.BabyHome {
 }
 class "FilleHome" as ru.jlexender.se.labstory.classesList.Place.FilleHome {
 }
 class "Porch" as ru.jlexender.se.labstory.classesList.Place.Porch {
+}
+class "PorchPlace" as ru.jlexender.se.labstory.classesList.Place.PorchPlace {
 }
 class "RulleHome" as ru.jlexender.se.labstory.classesList.Place.RulleHome {
 }
@@ -165,18 +248,25 @@ enum "Mood" as ru.jlexender.se.labstory.enums.Mood {
   + {static}Mood valueOf(String)
   +String getValue()
 }
-enum "Weather" as ru.jlexender.se.labstory.enums.Weather {
-  CLOUDY
-  SUNNY
-  SNOWY
-  RAINY
-  THUNDER
-  ..
-  -String value
+class "ItemIsNotPourableException" as ru.jlexender.se.labstory.exceptions.ItemIsNotPourableException {
+  -Item subject
   __
-  + {static}Weather[] values()
-  + {static}Weather valueOf(String)
-  +String getValue()
+  +Item getProblematicItem()
+}
+class "ItemTooLargeException" as ru.jlexender.se.labstory.exceptions.ItemTooLargeException {
+  -Item subject
+  __
+  +int getProblematicItem()
+}
+class "UnknownHumanLocationException" as ru.jlexender.se.labstory.exceptions.UnknownHumanLocationException {
+  #Human subject
+  __
+  +Human getHuman()
+}
+class "WrongHumanLimbException" as ru.jlexender.se.labstory.exceptions.WrongHumanLimbException {
+  #Human subject
+  __
+  +Human getHuman()
 }
 interface "IDrinkingItem" as ru.jlexender.se.labstory.interfaces.IDrinkingItem {
 }
@@ -186,15 +276,26 @@ interface "IRollable" as ru.jlexender.se.labstory.interfaces.IRollable {
 }
 interface "ISeat" as ru.jlexender.se.labstory.interfaces.ISeat {
 }
-class "Printer" as ru.jlexender.se.labstory.utilityClasses.Printer {
-  + {static}void print(String)
+interface "IWearable" as ru.jlexender.se.labstory.interfaces.IWearable {
 }
-ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.classesList.Place.Porch
-ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.basicClasses.Human
-ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.basicClasses.Place
-ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.classesList.Item.Buns
-ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.classesList.Item.Juice
-ru.jlexender.se.labstory.Book --> ru.jlexender.se.labstory.classesList.Item.Glass
+class "Printer" as ru.jlexender.se.labstory.utilityClasses.Printer {
+  + {static}String formatList(INamed[])
+  + {static}void describeAction(String)
+}
+interface "IExecute" as ru.jlexender.se.labstory.utilityInterfaces.IExecute {
+  + {abstract}void execute()
+}
+interface "INamed" as ru.jlexender.se.labstory.utilityInterfaces.INamed {
+  + {abstract}String getName()
+}
+ru.jlexender.se.labstory.App$1 .u.|> ru.jlexender.se.labstory.utilityInterfaces.IExecute
+ru.jlexender.se.labstory.App$1 --> ru.jlexender.se.labstory.classesList.Place.Porch
+ru.jlexender.se.labstory.App$1 --> ru.jlexender.se.labstory.basicClasses.Human
+ru.jlexender.se.labstory.App$1 --> ru.jlexender.se.labstory.basicClasses.Place
+ru.jlexender.se.labstory.App$1 --> ru.jlexender.se.labstory.classesList.Item.Buns
+ru.jlexender.se.labstory.App$1 --> ru.jlexender.se.labstory.classesList.Item.Juice
+ru.jlexender.se.labstory.App$1 --> ru.jlexender.se.labstory.classesList.Item.Glass
+ru.jlexender.se.labstory.App$1 --> ru.jlexender.se.labstory.classesList.Item.KarlssonsBoots
 ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IDoNotListen
 ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IDrinkFromItem
 ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IEat
@@ -205,24 +306,41 @@ ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actio
 ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IPour
 ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IRollItem
 ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.ISit
-ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IStartThinking
-ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IStopThinking
+ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IThink
 ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.ITell
+ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IHoldWithLimb
+ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IWantToSay
+ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IWear
+ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IInterrupt
+ru.jlexender.se.labstory.basicClasses.Human --> ru.jlexender.se.labstory.basicClasses.Place
+ru.jlexender.se.labstory.basicClasses.Human <--> ru.jlexender.se.labstory.basicClasses.Human$Limb
 ru.jlexender.se.labstory.basicClasses.Human --> ru.jlexender.se.labstory.enums.Mood
-ru.jlexender.se.labstory.basicClasses.Place --> ru.jlexender.se.labstory.enums.Weather
+ru.jlexender.se.labstory.basicClasses.Human$1Thought -u-|> java.lang.Record
+ru.jlexender.se.labstory.basicClasses.Human$Limb .u.|> ru.jlexender.se.labstory.utilityInterfaces.INamed
+ru.jlexender.se.labstory.basicClasses.Place --> ru.jlexender.se.labstory.basicClasses.Place$Weather
+ru.jlexender.se.labstory.basicClasses.Place$Weather -u-|> java.lang.Enum
 ru.jlexender.se.labstory.classesList.Item.Buns -u-|> ru.jlexender.se.labstory.basicClasses.Item
 ru.jlexender.se.labstory.classesList.Item.Buns .u.|> ru.jlexender.se.labstory.interfaces.IFood
-ru.jlexender.se.labstory.classesList.Item.Buns .u.|> ru.jlexender.se.labstory.interfaces.IRollable
 ru.jlexender.se.labstory.classesList.Item.Glass -u-|> ru.jlexender.se.labstory.basicClasses.Item
 ru.jlexender.se.labstory.classesList.Item.Glass .u.|> ru.jlexender.se.labstory.interfaces.IRollable
 ru.jlexender.se.labstory.classesList.Item.Glass .u.|> ru.jlexender.se.labstory.interfaces.IDrinkingItem
 ru.jlexender.se.labstory.classesList.Item.Juice -u-|> ru.jlexender.se.labstory.basicClasses.Item
+ru.jlexender.se.labstory.classesList.Item.KarlssonsBoots -u-|> ru.jlexender.se.labstory.basicClasses.Item
+ru.jlexender.se.labstory.classesList.Item.KarlssonsBoots .u.|> ru.jlexender.se.labstory.interfaces.IWearable
 ru.jlexender.se.labstory.classesList.Place.BabyHome -u-|> ru.jlexender.se.labstory.basicClasses.Place
 ru.jlexender.se.labstory.classesList.Place.FilleHome -u-|> ru.jlexender.se.labstory.basicClasses.Place
 ru.jlexender.se.labstory.classesList.Place.Porch -u-|> ru.jlexender.se.labstory.basicClasses.Place
 ru.jlexender.se.labstory.classesList.Place.Porch .u.|> ru.jlexender.se.labstory.interfaces.ISeat
+ru.jlexender.se.labstory.classesList.Place.PorchPlace -u-|> ru.jlexender.se.labstory.basicClasses.Place
 ru.jlexender.se.labstory.classesList.Place.RulleHome -u-|> ru.jlexender.se.labstory.basicClasses.Place
 ru.jlexender.se.labstory.enums.Color -u-|> java.lang.Enum
 ru.jlexender.se.labstory.enums.Mood -u-|> java.lang.Enum
-ru.jlexender.se.labstory.enums.Weather -u-|> java.lang.Enum
+ru.jlexender.se.labstory.exceptions.ItemIsNotPourableException -u-|> java.lang.RuntimeException
+ru.jlexender.se.labstory.exceptions.ItemIsNotPourableException --> ru.jlexender.se.labstory.basicClasses.Item
+ru.jlexender.se.labstory.exceptions.ItemTooLargeException -u-|> java.lang.Exception
+ru.jlexender.se.labstory.exceptions.ItemTooLargeException --> ru.jlexender.se.labstory.basicClasses.Item
+ru.jlexender.se.labstory.exceptions.UnknownHumanLocationException -u-|> java.lang.RuntimeException
+ru.jlexender.se.labstory.exceptions.UnknownHumanLocationException --> ru.jlexender.se.labstory.basicClasses.Human
+ru.jlexender.se.labstory.exceptions.WrongHumanLimbException -u-|> java.lang.Exception
+ru.jlexender.se.labstory.exceptions.WrongHumanLimbException --> ru.jlexender.se.labstory.basicClasses.Human
 @enduml

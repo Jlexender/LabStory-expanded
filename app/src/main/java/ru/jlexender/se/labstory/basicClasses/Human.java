@@ -8,7 +8,7 @@ import ru.jlexender.se.labstory.interfaces.*;
 import ru.jlexender.se.labstory.exceptions.*;
 import java.util.List;
 
-public class Human implements IDoNotListen, IDrinkFromItem, IEat, IForgetToTell, IGoingTo, IHold, ILive, IPour, IRollItem, ISit, IThink, ITell, IHoldWithLimb, IWantToSay, IWear, IInterrupt {
+public class Human implements IDoNotListen, IDrinkFromItem, IEat, IForgetToTell, IGoingTo, IHold, ILive, IPour, IRollItem, ISit, IThink, ITell, IHoldWithLimb, IWantToSay, IWear, IJumpUp, IReturnBackTo, IInterrupt, INamed {
     private final String name;
     private Mood mood;
     private Place location = null;

@@ -1,6 +1,8 @@
 package ru.jlexender.se.labstory.basicClasses;
 
-public abstract class Item {
+import ru.jlexender.se.labstory.utilityInterfaces.INamed;
+
+public abstract class Item implements INamed {
     private final String name;
     private final int size;
     private boolean liquid;

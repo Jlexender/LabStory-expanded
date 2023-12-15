@@ -1,6 +1,8 @@
 package ru.jlexender.se.labstory.basicClasses;
 
-public abstract class Place {
+import ru.jlexender.se.labstory.utilityInterfaces.INamed;
+
+public abstract class Place implements INamed {
     private final String name;
     private Weather weather;
     
