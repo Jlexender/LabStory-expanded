@@ -311,12 +311,17 @@ ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actio
 ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IHoldWithLimb
 ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IWantToSay
 ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IWear
+ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IJumpUp
+ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IReturnBackTo
 ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.actionInterfaces.IInterrupt
+ru.jlexender.se.labstory.basicClasses.Human .u.|> ru.jlexender.se.labstory.utilityInterfaces.INamed
 ru.jlexender.se.labstory.basicClasses.Human --> ru.jlexender.se.labstory.basicClasses.Place
 ru.jlexender.se.labstory.basicClasses.Human <--> ru.jlexender.se.labstory.basicClasses.Human$Limb
 ru.jlexender.se.labstory.basicClasses.Human --> ru.jlexender.se.labstory.enums.Mood
 ru.jlexender.se.labstory.basicClasses.Human$1Thought -u-|> java.lang.Record
 ru.jlexender.se.labstory.basicClasses.Human$Limb .u.|> ru.jlexender.se.labstory.utilityInterfaces.INamed
+ru.jlexender.se.labstory.basicClasses.Item .u.|> ru.jlexender.se.labstory.utilityInterfaces.INamed
+ru.jlexender.se.labstory.basicClasses.Place .u.|> ru.jlexender.se.labstory.utilityInterfaces.INamed
 ru.jlexender.se.labstory.basicClasses.Place --> ru.jlexender.se.labstory.basicClasses.Place$Weather
 ru.jlexender.se.labstory.basicClasses.Place$Weather -u-|> java.lang.Enum
 ru.jlexender.se.labstory.classesList.Item.Buns -u-|> ru.jlexender.se.labstory.basicClasses.Item
