@@ -2,7 +2,7 @@ package ru.jlexender.se.labstory.exceptions;
 
 import ru.jlexender.se.labstory.basicClasses.Human;
 
-public class WrongHumanLimbException extends Exception {
+public class WrongHumanLimbException extends RuntimeException {
     Human subject;
 
     public WrongHumanLimbException(String message, Human subject) {
